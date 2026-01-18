@@ -1,0 +1,3018 @@
+<!doctype html>
+<html lang="zh" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>马来语快速入门教程</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js" onerror="console.warn('element_sdk.js not found, continuing without SDK')"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    * {
+      font-family: 'Noto Sans SC', 'Poppins', sans-serif;
+    }
+    .malay-text {
+      font-family: 'Poppins', sans-serif;
+    }
+    .chapter-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .chapter-card:hover {
+      transform: translateY(-4px);
+    }
+    .vocab-item {
+      transition: all 0.2s ease;
+    }
+    .vocab-item:hover {
+      transform: scale(1.02);
+    }
+    .nav-link {
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .practice-btn {
+      transition: all 0.2s ease;
+    }
+    .practice-btn:hover {
+      transform: scale(1.05);
+    }
+    .audio-btn {
+      transition: all 0.15s ease;
+    }
+    .audio-btn:active {
+      transform: scale(0.95);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+    .progress-ring {
+      transition: stroke-dashoffset 0.5s ease;
+    }
+    .game-option {
+      transition: all 0.3s ease;
+    }
+    .game-option:hover:not(:disabled) {
+      transform: translateX(8px);
+    }
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-preserve-3d {
+      transform-style: preserve-3d;
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+    .flashcard {
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+    .flashcard-face {
+      backface-visibility: hidden;
+    }
+    @keyframes flyToCart {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(300px, -200px) scale(0.3);
+        opacity: 0;
+      }
+    }
+    .fly-to-cart {
+      animation: flyToCart 0.8s ease-out forwards;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+    .shake {
+      animation: shake 0.4s ease-in-out;
+    }
+    .boutique-item {
+      transition: all 0.3s ease;
+    }
+    .boutique-item:hover {
+      transform: scale(1.05);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" onerror="console.warn('data_sdk.js not found, continuing without SDK')"></script>
+</head>
+<body class="h-full bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white overflow-auto">
+  <div id="app" class="w-full min-h-full">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-emerald-900/95 backdrop-blur-sm border-b border-emerald-700/50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-xl">
+            🇲🇾
+          </div>
+          <div>
+            <h1 id="nav-title" class="font-bold text-lg leading-tight">马来语快速入门</h1>
+            <p class="text-emerald-300 text-xs malay-text">Kursus Pantas Bahasa Melayu</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="showHome()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium">首页</button>
+          <button onclick="showProgress()" class="nav-link px-3 py-2 rounded-lg text-sm font-medium">进度</button>
+			
+			 <!-- YouTube Help Button -->
+  <a href="https://youtube.com/@fyiilysm?si=TMOv8w7TZzV_Zq4F" target="_blank" 
+     class="px-3 py-2 rounded-lg text-sm font-medium bg-red-600 hover:bg-red-700 text-white flex items-center gap-2 transition-colors">
+    <span>视频帮助</span>
+    <span>▶️</span>
+  </a>
+        </div>
+      </div>
+		
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="max-w-6xl mx-auto px-4 py-8">
+      <!-- Home View -->
+      <div id="home-view">
+        <!-- Hero Section -->
+        <div class="text-center mb-12 fade-in">
+          <div class="inline-flex items-center gap-2 bg-emerald-800/50 px-4 py-2 rounded-full text-emerald-300 text-sm mb-6">
+            <span>🎯</span>
+            <span id="welcome-text">专为中国游客设计</span>
+          </div>
+          <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-emerald-100 to-cyan-200 bg-clip-text text-transparent">马来语快速入门教程</h1>
+          <p class="text-xl text-emerald-200 malay-text mb-2">Kursus Pantas Bahasa Melayu</p>
+          <p class="text-emerald-300 max-w-2xl mx-auto">从零开始学习马来语，掌握旅游必备词汇和日常对话。6个实用章节，让您的马来西亚之旅更加顺畅！</p>
+        </div>
+
+        <!-- Chapter Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Chapter 1 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(1)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                📚
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第1章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">马来语简介</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Pengenalan Bahasa Melayu</p>
+            <p class="text-emerald-200 text-sm mb-4">学习马来语的基本发音、元音辅音以及简单的SVO句型。</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">12个词汇 · 5个句型</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 2 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(2)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-pink-400 to-rose-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                👋
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第2章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">自我介绍</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Pengenalan Diri</p>
+            <p class="text-emerald-200 text-sm mb-4">学习用马来语介绍自己的姓名、国籍、身份和职业。</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">25个词汇 · 对话练习 · 文化笔记</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 3 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(3)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                ✈️
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第3章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">机场与交通</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Di Lapangan Terbang &amp; Pengangkutan</p>
+            <p class="text-emerald-200 text-sm mb-4">掌握入境、行李领取、海关和找交通工具的实用对话。含互动游戏！</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">18个词汇 · 对话 · 🎮 游戏</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 4 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(4)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-400 to-violet-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🏨
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第4章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">酒店</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Di Hotel</p>
+            <p class="text-emerald-200 text-sm mb-4">办理入住、询问设施、礼貌投诉。含配对游戏！</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">10个词汇 · 对话 · 🎴 配对游戏</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 5 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(5)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-red-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🍜
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第5章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">餐厅与美食</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Di Restoran &amp; Makanan</p>
+            <p class="text-emerald-200 text-sm mb-4">点餐、表达口味偏好、询问价格和打包。含练习题！</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">10个词汇 · 7个句型 · ✏️ 练习</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 6 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(6)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🛍️
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第6章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">购物与讨价还价</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Membeli-belah</p>
+            <p class="text-emerald-200 text-sm mb-4">询问价格、选择尺码和颜色、礼貌讨价还价。含虚拟精品店游戏！</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">11个词汇 · 6个句型 · 🛍️ 精品店游戏</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 7 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(7)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🗺️
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第7章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">方向与位置</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Arah &amp; Lokasi</p>
+            <p class="text-emerald-200 text-sm mb-4">礼貌询问方向、理解基本方向词汇、使用地点词汇。含城市导航游戏！</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">18个词汇 · 对话 · 🗺️ 导航游戏</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 8 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(8)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-fuchsia-400 to-pink-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🚑
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第8章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">紧急情况与健康</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">KECEMASAN &amp; KESIHATAN</p>
+            <p class="text-emerald-200 text-sm mb-4">紧急求助、表达生病或危险、医院与警察局等求助地点。含对话与重要笔记。</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">10个词汇 · 8个句子 · 对话 · 重要笔记</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Chapter 9 -->
+          <div class="chapter-card bg-gradient-to-br from-emerald-800/80 to-emerald-900/80 rounded-2xl p-6 border border-emerald-700/50 cursor-pointer" onclick="showChapter(9)">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                🎭
+              </div>
+              <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第9章</span>
+            </div>
+            <h3 class="text-xl font-bold mb-1">文化与礼仪</h3>
+            <p class="text-emerald-300 text-sm malay-text mb-3">Budaya &amp; Etika Komunikasi Malaysia</p>
+            <p class="text-emerald-200 text-sm mb-4">禁忌事项、餐桌礼仪、着装建议、多元文化与问候方式。</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-emerald-400">指南 · 例子 · 贴士</span>
+              <span class="text-emerald-400">→</span>
+            </div>
+          </div>
+
+          <!-- Quick Tips Card -->
+          <div class="chapter-card bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl p-6 border border-yellow-500/30">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-xl flex items-center justify-center text-2xl shadow-lg">
+                💡
+              </div>
+              <span class="bg-yellow-500/30 px-3 py-1 rounded-full text-xs text-yellow-300">学习贴士</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">学习技巧</h3>
+            <ul class="text-emerald-200 text-sm space-y-2">
+              <li class="flex items-start gap-2"><span class="text-yellow-400">•</span> <span>马来语发音规则简单，接近汉语拼音</span></li>
+              <li class="flex items-start gap-2"><span class="text-yellow-400">•</span> <span>句子结构：主语 + 谓语 + 宾语</span></li>
+              <li class="flex items-start gap-2"><span class="text-yellow-400">•</span> <span>礼貌用语很重要，常说"Terima kasih"</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter View (Hidden by default) -->
+      <div id="chapter-view" class="hidden"></div>
+
+      <!-- Progress View (Hidden by default) -->
+      <div id="progress-view" class="hidden">
+        <div class="text-center mb-8 fade-in">
+          <h2 class="text-3xl font-bold mb-2">学习进度</h2>
+          <p class="text-emerald-300">跟踪您的马来语学习旅程</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-emerald-800/50 rounded-2xl p-6 border border-emerald-700/50">
+            <h3 class="text-xl font-bold mb-4">章节完成度</h3>
+            <div id="progress-chapters" class="space-y-4"></div>
+          </div>
+          <div class="bg-emerald-800/50 rounded-2xl p-6 border border-emerald-700/50">
+            <h3 class="text-xl font-bold mb-4">总体统计</h3>
+            <div class="flex items-center justify-center mb-6 relative">
+              <svg class="w-40 h-40 transform -rotate-90">
+                <circle cx="80" cy="80" r="70" stroke="#064e3b" stroke-width="12" fill="none" />
+                <circle id="progress-ring" class="progress-ring" cx="80" cy="80" r="70" stroke="url(#gradient)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="440" />
+                <defs>
+                  <lineargradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#fbbf24" />
+                    <stop offset="100%" stop-color="#f97316" />
+                  </lineargradient>
+                </defs>
+              </svg>
+              <div class="absolute text-center">
+                <span id="progress-percent" class="text-4xl font-bold">0%</span>
+                <p class="text-emerald-300 text-sm">完成</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div class="bg-emerald-900/50 rounded-xl p-4">
+                <p id="words-learned" class="text-2xl font-bold text-yellow-400">0</p>
+                <p class="text-emerald-300 text-sm">已学词汇</p>
+              </div>
+              <div class="bg-emerald-900/50 rounded-xl p-4">
+                <p id="sentences-learned" class="text-2xl font-bold text-orange-400">0</p>
+                <p class="text-emerald-300 text-sm">已学句型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center">
+            <span class="text-white text-lg font-bold">马</span>
+          </div>
+          <span class="font-semibold">马来语快速入门</span>
+        </div>
+        <p class="text-gray-400 text-sm">为中国游客精心设计的马来语学习平台，让您的马来西亚之旅更加精彩。</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">快速链接</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><button onclick="showHome()" class="hover:text-pink-400 transition-colors">首页</button></li>
+          <li><button onclick="showChapter(1)" class="hover:text-pink-400 transition-colors">全部课程</button></li>
+          <li><button onclick="showProgress()" class="hover:text-pink-400 transition-colors">学习进度</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4">联系我们</h4>
+        <p class="text-sm text-gray-400">如有问题或建议，请随时联系我们</p>
+        <div class="flex gap-3 mt-4">
+          <span class="text-2xl">🇲🇾</span>
+          <span class="text-2xl">❤️</span>
+          <span class="text-2xl">🇨🇳</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mb-8"></div>
+    <div class="text-center text-sm text-gray-500">
+      <p>🇲🇾 马来语快速入门教程 · Kursus Pantas Bahasa Melayu</p>
+      <p class="mt-2 text-emerald-500">专为中国游客设计 · Direka khas untuk pelancong China</p>
+      <p>© 2024 马来语快速入门 | Kursus Pantas Bahasa Melayu</p>
+      <p class="mt-1">Selamat Datang ke Malaysia! 欢迎来到马来西亚！</p>
+    </div>
+  </div>
+</footer>
+  <script>
+    console.log("Malay Language Course - Script starting...");
+
+    // Game state
+    const gameState = {};
+
+    // Chapter Data
+    const chapters = {
+     1: {
+    title: "马来语简介",
+    malay: "Pengenalan Bahasa Melayu",
+    pinyin: "Mǎláiyǔ jiǎnjiè",
+    icon: "📚",
+    color: "from-amber-400 to-orange-500",
+    youtubeLink: "https://youtu.be/LZC8KSC22cI?si=vfrTBvHyI29muxSY",
+    intro: "马来语是马来西亚的国语，也是新加坡、文莱和印度尼西亚的官方语言之一。马来语采用罗马字母书写，发音规则简单，对中国人来说相对容易学习。",
+    sections: [
+      {
+        title: "1.1 元音发音 (Vokal)",
+        content: [
+          { malay: "A", chinese: "阿", pinyin: "ā", note: "类似汉语拼音'a'" },
+          { malay: "E", chinese: "呃/诶", pinyin: "e/é", note: "有两种发音" },
+          { malay: "I", chinese: "衣", pinyin: "yī", note: "类似汉语拼音'i'" },
+          { malay: "O", chinese: "哦", pinyin: "ó", note: "类似汉语拼音'o'" },
+          { malay: "U", chinese: "乌", pinyin: "wū", note: "类似汉语拼音'u'" }
+        ]
+      },
+      {
+        title: "1.2 基础问候语",
+        content: [
+          { 
+            malay: "Selamat pagi",
+            chinese: "早上好",
+            pinyin: "sə-la-mat pa-gi",
+            note: "早上到中午使用"
+          },
+          { malay: "Selamat tengah hari", chinese: "中午好", pinyin: "sə-la-mat tə-ngah ha-ri", note: "中午时分使用" },
+          { malay: "Selamat petang", chinese: "下午好", pinyin: "sə-la-mat pə-tang", note: "下午至傍晚使用" },
+          { malay: "Selamat malam", chinese: "晚上好", pinyin: "sə-la-mat ma-lam", note: "晚上使用" },
+          { malay: "Apa khabar?", chinese: "你好吗？", pinyin: "a-pa kha-bar", note: "问候语" },
+          { malay: "Khabar baik", chinese: "我很好", pinyin: "kha-bar ba-ik", note: "回答'你好吗'" },
+          { malay: "Terima kasih", chinese: "谢谢", pinyin: "tə-ri-ma ka-sih", note: "表示感谢" }
+        ]
+      },
+      {
+        title: "1.3 礼貌称呼方式 (Cara Panggil Orang - SOPAN)",
+        content: [
+          { 
+            malay: "Encik",
+            chinese: "先生",
+            pinyin: "en-cik",
+            note: "用于称呼男性（已婚或未婚）"
+          },
+          { 
+            malay: "Cik",
+            chinese: "小姐",
+            pinyin: "cik",
+            note: "用于称呼未婚女性"
+          },
+          { 
+            malay: "Puan",
+            chinese: "女士/太太",
+            pinyin: "pu-an",
+            note: "用于称呼已婚女性"
+          },
+          { 
+            malay: "Abang",
+            chinese: "哥哥",
+            pinyin: "a-bang",
+            note: "称呼年长男性（亲切/非正式）"
+          },
+          { 
+            malay: "Kakak",
+            chinese: "姐姐",
+            pinyin: "ka-kak",
+            note: "称呼年长女性（亲切/非正式）"
+          },
+          { 
+            malay: "Adik",
+            chinese: "弟弟/妹妹",
+            pinyin: "a-dik",
+            note: "称呼年幼者"
+          },
+          { 
+            malay: "Pak Cik",
+            chinese: "叔叔",
+            pinyin: "pak cik",
+            note: "称呼中年男性（亲切）"
+          },
+          { 
+            malay: "Mak Cik",
+            chinese: "阿姨",
+            pinyin: "mak cik",
+            note: "称呼中年女性（亲切）"
+          }
+        ]
+      },
+      {
+        title: "1.4 SVO 思维导图 - 基本句型结构",
+        isCustomHTML: true,
+        content: `
+          <div class="bg-gradient-to-br from-emerald-800/50 to-emerald-900/50 rounded-2xl p-6 border border-emerald-700/50 fade-in">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-2xl">📐</div>
+              <div>
+                <h3 class="text-xl font-bold">基本句型结构 (SVO)</h3>
+                <p class="poppins text-emerald-300 text-sm">Struktur Ayat Mudah</p>
+              </div>
+            </div>
+            <div class="bg-emerald-800/30 rounded-2xl p-6 border border-emerald-600/30">
+              <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+                <div class="bg-emerald-600 rounded-xl px-6 py-4 text-center">
+                  <div class="text-2xl font-bold">S</div>
+                  <div class="text-sm">主语 Subjek</div>
+                </div>
+                <div class="text-3xl">→</div>
+                <div class="bg-amber-600 rounded-xl px-6 py-4 text-center">
+                  <div class="text-2xl font-bold">V</div>
+                  <div class="text-sm">动词 Kata Kerja</div>
+                </div>
+                <div class="text-3xl">→</div>
+                <div class="bg-rose-600 rounded-xl px-6 py-4 text-center">
+                  <div class="text-2xl font-bold">O</div>
+                  <div class="text-sm">宾语 Objek</div>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div class="bg-emerald-900/50 rounded-xl p-4">
+                  <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+                    <span class="bg-emerald-600 px-3 py-1 rounded poppins">Saya</span>
+                    <span class="bg-amber-600 px-3 py-1 rounded poppins">makan</span>
+                    <span class="bg-rose-600 px-3 py-1 rounded poppins">nasi</span>
+                  </div>
+                  <p class="text-center text-emerald-200">我 + 吃 + 饭 = 我吃饭</p>
+                </div>
+                <div class="bg-emerald-900/50 rounded-xl p-4">
+                  <div class="flex flex-wrap items-center justify-center gap-2 mb-2">
+                    <span class="bg-emerald-600 px-3 py-1 rounded poppins">Dia</span>
+                    <span class="bg-amber-600 px-3 py-1 rounded poppins">beli</span>
+                    <span class="bg-rose-600 px-3 py-1 rounded poppins">buku</span>
+                  </div>
+                  <p class="text-center text-emerald-200">他/她 + 买 + 书 = 他/她买书</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        title: "1.5 基本句型结构 (SVO) - 例句",
+        content: [
+          { malay: "Saya makan nasi.", chinese: "我吃饭。", pinyin: "sa-ya ma-kan na-si", note: "主语 + 谓语 + 宾语" },
+          { malay: "Dia minum air.", chinese: "他/她喝水。", pinyin: "di-a mi-num a-ir", note: "Dia = 他/她" },
+          { malay: "Kami pergi ke pasar.", chinese: "我们去市场。", pinyin: "ka-mi pər-gi kə pa-sar", note: "Kami = 我们" },
+          { malay: "Mereka beli buah.", chinese: "他们买水果。", pinyin: "mə-re-ka bə-li bu-ah", note: "Mereka = 他们" },
+          { malay: "Awak dari mana?", chinese: "你从哪里来？", pinyin: "a-wak da-ri ma-na", note: "疑问句" }
+        ]
+      }
+    ]
+      },
+      2: {
+        title: "自我介绍",
+        malay: "Pengenalan Diri",
+        pinyin: "Zìwǒ jièshào",
+        icon: "👋",
+        color: "from-pink-400 to-rose-500",
+        youtubeLink: "https://youtu.be/qCZauUv033Q?si=7l9CbwvtpLpWVZRz",
+        intro: "在本单元结束时，您将能够：介绍自己的姓名和国家、说明来到马来西亚的目的，并在结识新朋友时使用简单而礼貌的句子。",
+        sections: [
+          {
+            title: "2.1 基本句子 (Ayat Asas)",
+            content: [
+              { malay: "Nama saya …", chinese: "我叫……", pinyin: "Na-ma sa-ya …", note: "自我介绍姓名" },
+              { malay: "Saya dari China", chinese: "我来自中国", pinyin: "Sa-ya da-ree Cha-ee-na", note: "表达国籍" },
+              { malay: "Saya pelancong", chinese: "我是游客", pinyin: "Sa-ya pe-lan-chong", note: "说明身份为游客" },
+              { malay: "Saya pelajar", chinese: "我是学生", pinyin: "Sa-ya pe-la-jar", note: "说明身份为学生" },
+              { malay: "Saya kerja di …", chinese: "我在……工作", pinyin: "Sa-ya ker-ja dee …", note: "说明工作地点" },
+              { malay: "Gembira berkenalan", chinese: "很高兴认识你", pinyin: "Gem-bee-ra ber-ke-na-lan", note: "礼貌问候语" }
+            ]
+          },
+          {
+            title: "2.2 重要词汇 (Perkataan Penting)",
+            content: [
+              { malay: "Nama", chinese: "名字", pinyin: "Na-ma", note: "称呼一个人的名字" },
+              { malay: "Negara", chinese: "国家", pinyin: "Ne-ga-ra", note: "国籍或原籍国" },
+              { malay: "Pelancong", chinese: "游客", pinyin: "Pe-lan-chong", note: "旅游者的身份" },
+              { malay: "Pelajar", chinese: "学生", pinyin: "Pe-la-jar", note: "在学习的人" },
+              { malay: "Kawan", chinese: "朋友", pinyin: "Ka-wan", note: "友好的关系" },
+              { malay: "Nama siapa?", chinese: "你叫什么名字？", pinyin: "Na-ma sya-pa?", note: "询问对方姓名" }
+            ]
+          },
+          {
+            title: "2.3 对话示例 (Contoh Dialog) - 与酒店工作人员结识",
+            content: [
+              { malay: "游客: Selamat pagi.", chinese: "游客：早安。", pinyin: "Se-la-mat pa-gee", note: "游客打招呼" },
+              { malay: "工作人员: Selamat pagi. Nama siapa?", chinese: "工作人员：早安。你叫什么名字？", pinyin: "Se-la-mat pa-gee. Na-ma sya-pa?", note: "工作人员询问" },
+              { malay: "游客: Nama saya Li Wei.", chinese: "游客：我叫李伟。", pinyin: "Na-ma sa-ya Li Wei", note: "介绍自己的名字" },
+              { malay: "Saya dari China.", chinese: "我来自中国。", pinyin: "Sa-ya da-ree Cha-ee-na", note: "说明来源国" },
+              { malay: "Saya pelancong.", chinese: "我是游客。", pinyin: "Sa-ya pe-lan-chong", note: "说明来访目的" },
+              { malay: "工作人员: Gembira berkenalan.", chinese: "工作人员：很高兴认识你。", pinyin: "Gem-bee-ra ber-ke-na-lan", note: "表达友好" },
+              { malay: "游客: Gembira berkenalan. Terima kasih.", chinese: "游客：很高兴认识你。谢谢。", pinyin: "Gem-bee-ra ber-ke-na-lan. Ter-ree-ma ka-seh", note: "礼貌回应" }
+            ]
+          },
+          {
+            title: "2.4 练习 (Latihan) - 选择题",
+            isExercise: true,
+            content: [
+              { 
+                question: "如何用马来语说 '我叫李伟'？", 
+                options: ["A) Saya dari Li Wei", "B) Nama saya Li Wei", "C) Li Wei pelancong", "D) Saya Li Wei nama"],
+                correct: "B",
+                explanation: "Nama saya ... 是正确的自我介绍方式"
+              },
+              { 
+                question: "如何用马来语说 '我来自中国'？", 
+                options: ["A) Saya China dari", "B) China saya dari", "C) Saya dari China", "D) Dari China nama saya"],
+                correct: "C",
+                explanation: "Saya dari ... 用来说明来自哪个国家"
+              },
+              { 
+                question: "'很高兴认识你' 用马来语怎么说？", 
+                options: ["A) Terima kasih", "B) Selamat pagi", "C) Gembira berkenalan", "D) Apa khabar"],
+                correct: "C",
+                explanation: "Gembira berkenalan 表示很高兴认识对方"
+              },
+              { 
+                question: "'Saya pelancong' 的中文意思是？", 
+                options: ["A) 我是学生", "B) 我是游客", "C) 我是朋友", "D) 我在工作"],
+                correct: "B",
+                explanation: "Pelancong 的意思是游客或旅行者"
+              },
+              { 
+                question: "在酒店见面时，应该先说什么？", 
+                options: ["A) Terima kasih", "B) Selamat pagi", "C) Gembira berkenalan", "D) Nama saya"],
+                correct: "B",
+                explanation: "Selamat pagi（早上好）是礼貌的问候开场。"
+              }
+            ]
+          },
+          {
+            title: "2.5 文化笔记 (Nota Budaya)",
+            content: [
+              { malay: "Senyum", chinese: "常带微笑", pinyin: "Se-nyum", note: "自我介绍时请保持微笑" },
+              { malay: "Sebut dengan jelas", chinese: "清晰表达", pinyin: "Se-but de-ngan je-las", note: "请慢慢且清晰地说出你的名字" },
+              { malay: "Ucapan sopan", chinese: "礼貌结束", pinyin: "U-cha-pan so-pan", note: "握手或结束后，习惯性说 'Gembira berkenalan'" },
+              { malay: "Hormat budaya", chinese: "尊重文化", pinyin: "Hor-mat bu-da-ya", note: "马来西亚是多元文化社会，展现尊重很重要" }
+            ]
+          }
+        ]
+      },
+      3: {
+        title: "机场与交通",
+        malay: "Di Lapangan Terbang & Pengangkutan",
+        pinyin: "Jīchǎng yǔ jiāotōng",
+        icon: "✈️",
+        color: "from-blue-400 to-indigo-500",
+        youtubeLink: "https://youtu.be/ZEHM-UmR6xI?si=6D3oO4uo3TK7bGEW",
+        intro: "在本单元结束时，您将能够：在移民柜台和行李提取处进行沟通、询问方向、使用交通工具如德士和 Grab、理解机场的基本指示。",
+        sections: [
+          {
+            title: "3.1 重要词汇 (Perkataan Penting)",
+            content: [
+              { malay: "Lapangan terbang", chinese: "机场", pinyin: "La-pang-an ter-bang", note: "机场" },
+              { malay: "Imigresen", chinese: "移民局", pinyin: "Ee-mee-gre-sen", note: "入境处" },
+              { malay: "Pasport", chinese: "护照", pinyin: "Pas-pot", note: "旅行证件" },
+              { malay: "Tiket", chinese: "机票", pinyin: "Tee-ket", note: "登机票" },
+              { malay: "Ambil bagasi", chinese: "取行李", pinyin: "Am-beel ba-ga-see", note: "领取行李" },
+              { malay: "Pintu", chinese: "登机口", pinyin: "Peen-too", note: "登机门" },
+              { malay: "Teksi", chinese: "德士/出租车", pinyin: "Tek-see", note: "计程车" },
+              { malay: "Grab", chinese: "电召车", pinyin: "G-rab", note: "打车软件" },
+              { malay: "Stesen", chinese: "车站", pinyin: "S-te-sen", note: "车站" },
+              { malay: "Tandas", chinese: "厕所", pinyin: "Tan-das", note: "洗手间" }
+            ]
+          },
+          {
+            title: "3.2 基本句子 (Ayat Asas)",
+            content: [
+              { malay: "Di mana imigresen?", chinese: "移民局在哪里？", pinyin: "Dee ma-na ee-mee-gre-sen?", note: "询问移民局位置" },
+              { malay: "Di mana ambil bagasi?", chinese: "行李在哪里拿？", pinyin: "Dee ma-na am-beel ba-ga-see?", note: "询问行李处" },
+              { malay: "Saya mahu naik teksi.", chinese: "我要坐德士。", pinyin: "Sa-ya ma-hoo na-eek tek-see.", note: "要搭出租车" },
+              { malay: "Saya mahu ke hotel ini.", chinese: "我要去这个酒店。", pinyin: "Sa-ya ma-hoo ker ho-tel ee-nee.", note: "说明目的地" },
+              { malay: "Berapa harga?", chinese: "多少钱？", pinyin: "Ber-ra-pa har-ga?", note: "询问价格" },
+              { malay: "Tolong tunggu.", chinese: "请等一下。", pinyin: "To-long toon-goo.", note: "请求等待" }
+            ]
+          },
+          {
+            title: "3.3 对话示例 (Contoh Dialog) - 在移民局柜台",
+            content: [
+              { malay: "官员: Pasport, tolong.", chinese: "官员：请给我护照。", pinyin: "Pas-pot, to-long", note: "官员要求护照" },
+              { malay: "游客: Ini pasport saya.", chinese: "游客：这是我的护照。", pinyin: "Ee-nee pas-pot sa-ya", note: "递交护照" },
+              { malay: "官员: Tujuan datang?", chinese: "官员：来这里的目的是什么？", pinyin: "Too-joo-an da-tang?", note: "询问来访目的" },
+              { malay: "游客: Saya pelancong.", chinese: "游客：我是游客。", pinyin: "Sa-ya pe-lan-chong", note: "说明旅游目的" }
+            ]
+          },
+          {
+            title: "3.4 对话示例 (Contoh Dialog) - 搭乘德士/Grab",
+            content: [
+              { malay: "游客: Saya mahu ke hotel ini.", chinese: "游客：我要去这个酒店。", pinyin: "Sa-ya ma-hoo ker ho-tel ee-nee", note: "告知目的地" },
+              { malay: "司机: Baik.", chinese: "司机：好的。", pinyin: "Ba-eek", note: "司机同意" },
+              { malay: "游客: Berapa harga?", chinese: "游客：多少钱？", pinyin: "Ber-ra-pa har-ga?", note: "询问车费" },
+              { malay: "司机: Lima puluh ringgit.", chinese: "司机：五十令吉。", pinyin: "Lee-ma poo-loo ring-geet", note: "告知价格" },
+              { malay: "游客: Baik, terima kasih.", chinese: "游客：好的，谢谢。", pinyin: "Ba-eek, ter-ree-ma ka-seh", note: "表示感谢" }
+            ]
+          },
+          {
+            title: "3.5 互动游戏 - 机场场景模拟 🎮",
+            isGame: true,
+            content: {
+              scenarios: [
+                {
+                  id: 1,
+                  situation: "你刚下飞机，需要找到移民局",
+                  question: "你应该问什么？",
+                  options: [
+                    { text: "Di mana imigresen?", isCorrect: true },
+                    { text: "Di mana hotel?", isCorrect: false },
+                    { text: "Saya mahu makan.", isCorrect: false }
+                  ],
+                  correctFeedback: "✅ 太棒了！你成功找到移民局！",
+                  wrongFeedback: "❌ 试试看另一个选项。提示：你需要找'移民局'。"
+                },
+                {
+                  id: 2,
+                  situation: "移民局官员向你要护照",
+                  question: "你应该怎么回答？",
+                  options: [
+                    { text: "Ini pasport saya.", isCorrect: true },
+                    { text: "Saya pelancong.", isCorrect: false },
+                    { text: "Terima kasih.", isCorrect: false }
+                  ],
+                  correctFeedback: "✅ 完美！你递交了护照！",
+                  wrongFeedback: "❌ 官员需要看你的护照。提示：用'Ini pasport saya'"
+                },
+                {
+                  id: 3,
+                  situation: "你需要拿行李",
+                  question: "你应该问什么？",
+                  options: [
+                    { text: "Di mana ambil bagasi?", isCorrect: true },
+                    { text: "Di mana tandas?", isCorrect: false },
+                    { text: "Berapa harga?", isCorrect: false }
+                  ],
+                  correctFeedback: "✅ 很好！你找到了行李提取处！",
+                  wrongFeedback: "❌ 你需要找行李处。提示：'bagasi'是行李的意思"
+                },
+                {
+                  id: 4,
+                  situation: "你想搭出租车去酒店",
+                  question: "你应该对司机说什么？",
+                  options: [
+                    { text: "Saya mahu ke hotel ini.", isCorrect: true },
+                    { text: "Di mana hotel?", isCorrect: false },
+                    { text: "Tolong tunggu.", isCorrect: false }
+                  ],
+                  correctFeedback: "✅ 太好了！司机知道你要去哪里了！",
+                  wrongFeedback: "❌ 你需要告诉司机目的地。提示：用'Saya mahu ke...'"
+                },
+                {
+                  id: 5,
+                  situation: "你想知道车费",
+                  question: "你应该问什么？",
+                  options: [
+                    { text: "Berapa harga?", isCorrect: true },
+                    { text: "Terima kasih.", isCorrect: false },
+                    { text: "Tolong tunggu.", isCorrect: false }
+                  ],
+                  correctFeedback: "✅ 完美！司机告诉你车费是50令吉！你顺利完成了机场之旅！🎉",
+                  wrongFeedback: "❌ 你想知道价格。提示：说'Berapa harga?'"
+                }
+              ]
+            }
+          },
+          {
+            title: "3.6 文化笔记 (Nota Budaya)",
+            content: [
+              { malay: "Guna dua tangan", chinese: "双手递交", pinyin: "Gu-na du-a ta-ngan", note: "递交护照时使用双手，以示尊重" },
+              { malay: "Ucapan sopan", chinese: "礼貌用语", pinyin: "U-cha-pan so-pan", note: "在请求帮助前先说'Tolong'（请/帮助）" },
+              { malay: "Berterima kasih", chinese: "感恩", pinyin: "Ber-ter-ree-ma ka-seh", note: "得到帮助后，一定要说'Terima kasih'（谢谢）" },
+              { malay: "Bersikap tenang", chinese: "保持冷静", pinyin: "Ber-see-kap te-nam", note: "在机场保持冷静和耐心，马来西亚人很友善" }
+            ]
+          }
+        ]
+      },
+      4: {
+        title: "酒店",
+        malay: "Di Hotel",
+        pinyin: "Jiǔdiàn",
+        icon: "🏨",
+        color: "from-purple-400 to-violet-500",
+        youtubeLink: "https://youtu.be/BB0aPdHdlYQ?si=QmBsRhJ0ZmY7mG2E",
+        intro: "在本单元结束时，参与者将能够：办理入住 (Check-in) 和退房 (Check-out) 手续、询问房间及酒店设施、礼貌地投诉基本问题。",
+        sections: [
+          {
+            title: "4.1 重要词汇 (PERKATAAN PENTING)",
+            content: [
+              { malay: "Hotel", chinese: "酒店", pinyin: "Ho-tel", note: "酒店" },
+              { malay: "Kaunter", chinese: "柜台", pinyin: "Ka-oon-ter", note: "柜台" },
+              { malay: "Tempahan", chinese: "预订", pinyin: "Tem-pa-han", note: "预订" },
+              { malay: "Bilik", chinese: "房间", pinyin: "Bee-lek", note: "房间" },
+              { malay: "Kunci", chinese: "钥匙", pinyin: "Koon-chee", note: "钥匙" },
+              { malay: "WiFi", chinese: "无线网络", pinyin: "Wa-ee Fa-ee", note: "无线网络" },
+              { malay: "Tandas", chinese: "厕所", pinyin: "Tan-das", note: "厕所" },
+              { malay: "Air panas", chinese: "热水", pinyin: "Ah-yer pa-nas", note: "热水" },
+              { malay: "Rosak", chinese: "坏了", pinyin: "Ro-sak", note: "坏了" },
+              { malay: "Tolong baiki", chinese: "请修理", pinyin: "To-long ba-ee-kee", note: "请修理" }
+            ]
+          },
+          {
+            title: "4.2 基本句子 (AYAT ASAS)",
+            content: [
+              { malay: "Saya mahu check in.", chinese: "我要办理入住。", pinyin: "Sa-ya ma-hoo check in.", note: "办理入住" },
+              { malay: "Saya sudah tempah.", chinese: "我已经预订了。", pinyin: "Sa-ya soo-dah tem-pa-han.", note: "已预订" },
+              { malay: "Nama saya …", chinese: "我叫……", pinyin: "Na-ma sa-ya …", note: "自我介绍" },
+              { malay: "Boleh saya dapat kunci?", chinese: "可以给我钥匙吗？", pinyin: "Bo-leh sa-ya da-pat koon-chee?", note: "要钥匙" },
+              { malay: "WiFi ada?", chinese: "有无线网络吗？", pinyin: "Wa-ee Fa-ee ah-da?", note: "询问WiFi" },
+              { malay: "Air panas tidak ada.", chinese: "没有热水。", pinyin: "Ah-yer pa-nas tee-dak ah-da.", note: "无热水" },
+              { malay: "Tolong baiki.", chinese: "请修理。", pinyin: "To-long ba-ee-kee.", note: "请求修理" }
+            ]
+          },
+          {
+            title: "4.3 对话示例 (CONTOH DIALOG) - 在酒店柜台办理入住",
+            content: [
+              { malay: "工作人员: Selamat datang. Boleh saya bantu?", chinese: "工作人员：欢迎。请问需要帮忙吗？", pinyin: "Se-la-mat da-tang. Bo-leh sa-ya ban-too?", note: "问候" },
+              { malay: "游客: Saya mahu check in. Saya sudah tempah.", chinese: "游客：我要办理入住。我已经预订了。", pinyin: "Sa-ya ma-hoo check in. Sa-ya soo-dah tem-pa-han.", note: "请求入住" },
+              { malay: "工作人员: Nama siapa?", chinese: "工作人员：请问名字？", pinyin: "Na-ma sya-pa?", note: "询问名字" },
+              { malay: "游客: Nama saya Li Wei.", chinese: "游客：我叫李伟。", pinyin: "Na-ma sa-ya Li Wei.", note: "回答名字" },
+              { malay: "工作人员: Ini kunci bilik. WiFi ada di bilik.", chinese: "工作人员：这是房间钥匙。房间有无线网络。", pinyin: "Ee-nee koon-chee bee-lek. Wa-ee Fa-ee ah-da dee bee-lek.", note: "提供钥匙和信息" },
+              { malay: "游客: Terima kasih.", chinese: "游客：谢谢。", pinyin: "Ter-ree-ma ka-seh", note: "感谢" }
+            ]
+          },
+          {
+            title: "4.4 对话示例 (CONTOH DIALOG) - 简单投诉",
+            content: [
+              { malay: "游客: Maaf, air panas tidak ada.", chinese: "游客：不好意思，没有热水。", pinyin: "Ma-af, ah-yer pa-nas tee-dak ah-da.", note: "投诉问题" },
+              { malay: "工作人员: Baik, kami akan baiki.", chinese: "工作人员：好的，我们会修理。", pinyin: "Ba-eek, ka-mee a-kan ba-ee-kee.", note: "回应投诉" },
+              { malay: "游客: Terima kasih.", chinese: "游客：谢谢。", pinyin: "Ter-ree-ma ka-seh", note: "感谢" }
+            ]
+          },
+          {
+            title: "4.5 练习 (LATIHAN) - 配对游戏 🎴",
+            isGame: true,
+            gameType: "matching",
+            content: {
+              pairs: [
+                { id: 1, malay: "Hotel", chinese: "酒店", pinyin: "Ho-tel" },
+                { id: 2, malay: "Kaunter", chinese: "柜台", pinyin: "Ka-oon-ter" },
+                { id: 3, malay: "Tempahan", chinese: "预订", pinyin: "Tem-pa-han" },
+                { id: 4, malay: "Bilik", chinese: "房间", pinyin: "Bee-lek" },
+                { id: 5, malay: "Kunci", chinese: "钥匙", pinyin: "Koon-chee" },
+                { id: 6, malay: "WiFi", chinese: "无线网络", pinyin: "Wa-ee Fa-ee" },
+                { id: 7, malay: "Air panas", chinese: "热水", pinyin: "Ah-yer pa-nas" },
+                { id: 8, malay: "Rosak", chinese: "坏了", pinyin: "Ro-sak" }
+              ]
+            }
+          },
+          {
+            title: "4.6 文化笔记 (NOTA BUDAYA)",
+            content: [
+              { malay: "Berbaris dengan teratur", chinese: "有序排队", pinyin: "Ber-ba-ris de-ngan ter-a-tur", note: "在柜台前请文明有序地排队" },
+              { malay: "Aduan sopan", chinese: "礼貌投诉", pinyin: "A-duan so-pan", note: "在提出任何投诉或问题前，先说一句 'Maaf'" },
+              { malay: "Jaga kunci", chinese: "保管钥匙", pinyin: "Ja-ga kun-ci", note: "请妥善保管好您的房间钥匙" },
+              { malay: "Hormat waktu senyap", chinese: "尊重安静时间", pinyin: "Hor-mat wa-ktu se-nyap", note: "晚上10点后请保持安静，尊重其他住客" }
+            ]
+          }
+        ]
+      },
+      5: {
+        title: "餐厅与美食",
+        malay: "Di Restoran & Makanan",
+        pinyin: "Cāntīng yǔ měishí",
+        icon: "🍜",
+        color: "from-red-400 to-orange-500",
+        youtubeLink: "https://youtu.be/gL5OQQ8kL3c?si=0gi1toJYvVlFsEXU",
+        intro: "在本单元结束时，参与者将能够：点餐和点饮料、表达辣度、甜度和热度、询问价格并要求打包、在餐厅使用礼貌用语。",
+        sections: [
+          {
+            title: "5.1 重要词汇 (PERKATAAN PENTING)",
+            content: [
+              { malay: "Restoran", chinese: "餐厅", pinyin: "Res-to-ran", note: "餐厅" },
+              { malay: "Menu", chinese: "菜单", pinyin: "Me-nu", note: "菜单" },
+              { malay: "Nasi", chinese: "米饭", pinyin: "Na-see", note: "米饭" },
+              { malay: "Ayam", chinese: "鸡肉", pinyin: "Ah-yam", note: "鸡肉" },
+              { malay: "Air", chinese: "水/饮料", pinyin: "Ah-yer", note: "水/饮料" },
+              { malay: "Pedas", chinese: "辣", pinyin: "Pe-das", note: "辣" },
+              { malay: "Manis", chinese: "甜", pinyin: "Ma-nees", note: "甜" },
+              { malay: "Panas", chinese: "热", pinyin: "Pa-nas", note: "热" },
+              { malay: "Bungkus", chinese: "打包", pinyin: "Boong-koos", note: "打包" },
+              { malay: "Bil", chinese: "账单", pinyin: "Beel", note: "账单" }
+            ]
+          },
+          {
+            title: "5.2 基本句子 (AYAT ASAS)",
+            content: [
+              { malay: "Saya mahu ini.", chinese: "我要这个。", pinyin: "Sa-ya ma-hoo ee-nee.", note: "点这个" },
+              { malay: "Saya mahu nasi ayam.", chinese: "我要鸡饭。", pinyin: "Sa-ya ma-hoo na-see ah-yam.", note: "点鸡饭" },
+              { malay: "Tidak mahu pedas.", chinese: "不要辣。", pinyin: "Tee-dak ma-hoo pe-das.", note: "不要辣" },
+              { malay: "Kurang manis.", chinese: "少甜。", pinyin: "Koo-rang ma-nees.", note: "少甜" },
+              { malay: "Boleh bungkus?", chinese: "可以打包吗？", pinyin: "Bo-leh boong-koos?", note: "问打包" },
+              { malay: "Berapa harga?", chinese: "多少钱？", pinyin: "Ber-ra-pa har-ga?", note: "问价格" },
+              { malay: "Minta bil.", chinese: "请给我账单。", pinyin: "Meen-ta beel.", note: "要账单" }
+            ]
+          },
+          {
+            title: "5.3 对话示例 (CONTOH DIALOG) - 场景 1：点餐",
+            content: [
+              { malay: "服务员: Selamat datang.", chinese: "服务员：欢迎光临。", pinyin: "Se-la-mat da-tang", note: "欢迎" },
+              { malay: "游客: Boleh saya lihat menu?", chinese: "游客：可以看菜单吗？", pinyin: "Bo-leh sa-ya lee-hat me-nu?", note: "要菜单" },
+              { malay: "服务员: Ini menu.", chinese: "服务员：这是菜单。", pinyin: "Ee-nee me-nu", note: "给菜单" },
+              { malay: "游客: Saya mahu nasi ayam. Tidak mahu pedas.", chinese: "游客：我要鸡饭。不要辣。", pinyin: "Sa-ya ma-hoo na-see ah-yam. Tee-dak ma-hoo pe-das.", note: "点餐" },
+              { malay: "服务员: Minum apa?", chinese: "服务员：喝什么？", pinyin: "Mee-noom a-pa?", note: "问饮料" },
+              { malay: "游客: Air kosong.", chinese: "游客：白开水。", pinyin: "Ah-yer ko-song", note: "要白开水" },
+              { malay: "服务员: Baik.", chinese: "服务员：好的。", pinyin: "Ba-eek", note: "确认" }
+            ]
+          },
+          {
+            title: "5.4 对话示例 (CONTOH DIALOG) - 场景 2：打包与付款",
+            content: [
+              { malay: "游客: Boleh bungkus?", chinese: "游客：可以打包吗？", pinyin: "Bo-leh boong-koos?", note: "问打包" },
+              { malay: "服务员: Boleh.", chinese: "服务员：可以。", pinyin: "Bo-leh", note: "同意" },
+              { malay: "游客: Minta bil.", chinese: "游客：请给我账单。", pinyin: "Meen-ta beel", note: "要账单" },
+              { malay: "服务员: Ini bil.", chinese: "服务员：这是账单。", pinyin: "Ee-nee beel", note: "给账单" },
+              { malay: "游客: Terima kasih.", chinese: "游客：谢谢。", pinyin: "Ter-ree-ma ka-seh", note: "感谢" }
+            ]
+          },
+          {
+            title: "5.5 练习 (LATIHAN) - 连一连",
+            isExercise: true,
+            content: [
+              { 
+                question: "我要这个", 
+                options: ["A) Boleh bungkus", "B) Saya mahu ini", "C) Tidak mahu pedas", "D) Berapa harga"],
+                correct: "B",
+                explanation: "'Saya mahu ini' 的意思是'我要这个'"
+              },
+              { 
+                question: "不要辣", 
+                options: ["A) Kurang manis", "B) Saya mahu ini", "C) Tidak mahu pedas", "D) Minta bil"],
+                correct: "C",
+                explanation: "'Tidak mahu pedas' 的意思是'不要辣'"
+              },
+              { 
+                question: "多少钱", 
+                options: ["A) Minta bil", "B) Boleh bungkus", "C) Saya mahu ini", "D) Berapa harga"],
+                correct: "D",
+                explanation: "'Berapa harga' 用来询问'多少钱'"
+              },
+              { 
+                question: "可以打包吗", 
+                options: ["A) Boleh bungkus", "B) Tidak mahu pedas", "C) Minta bil", "D) Kurang manis"],
+                correct: "A",
+                explanation: "'Boleh bungkus' 的意思是'可以打包吗'"
+              },
+              { 
+                question: "请给我账单", 
+                options: ["A) Berapa harga", "B) Minta bil", "C) Saya mahu ini", "D) Boleh bungkus"],
+                correct: "B",
+                explanation: "'Minta bil' 用来要求账单"
+              }
+            ]
+          },
+          {
+            title: "5.6 文化笔记 (NOTA BUDAYA)",
+            content: [
+              { malay: "Tunggu pelayan", chinese: "等待点餐", pinyin: "Toong-goo pe-la-yan", note: "在点餐前先等待服务员准备好" },
+              { malay: "Ucapan sopan", chinese: "礼貌用语", pinyin: "Oo-cha-pan so-pan", note: "习惯使用 'Tolong' (请) 和 'Terima kasih' (谢谢)" },
+              { malay: "Bayar di kaunter", chinese: "付款方式", pinyin: "Ba-yar dee ka-oon-ter", note: "在某些餐厅，您需要自己拿着账单去柜台付款" },
+              { malay: "Makanan halal", chinese: "清真食品", pinyin: "Ma-ka-nan ha-lal", note: "马来西亚大部分餐厅提供清真食品，尊重当地饮食文化" }
+            ]
+          }
+        ]
+      },
+      6: {
+        title: "购物与讨价还价",
+        malay: "Membeli-belah",
+        pinyin: "Gòuwù yǔ tǎojiàhuánjià",
+        icon: "🛍️",
+        color: "from-cyan-400 to-blue-500",
+        youtubeLink: "https://youtu.be/-Bj0pog16_E?si=bqP0JkG-gIZgRE10",
+        intro: "在本单元结束时，参与者将能够：询问商品价格、表达尺码和颜色、礼貌地讨价还价、进行付款。",
+        sections: [
+          {
+            title: "6.1 重要词汇 (PERKATAAN PENTING)",
+            content: [
+              { malay: "Kedai", chinese: "商店", pinyin: "Ke-da-ee", note: "商店" },
+              { malay: "Harga", chinese: "价格", pinyin: "Har-ga", note: "价格" },
+              { malay: "Murah", chinese: "便宜", pinyin: "Moo-rah", note: "便宜" },
+              { malay: "Mahal", chinese: "贵", pinyin: "Ma-hal", note: "贵" },
+              { malay: "Saiz", chinese: "尺码", pinyin: "Sa-eez", note: "尺码" },
+              { malay: "Warna", chinese: "颜色", pinyin: "War-na", note: "颜色" },
+              { malay: "Merah", chinese: "红色", pinyin: "Me-rah", note: "红色" },
+              { malay: "Hitam", chinese: "黑色", pinyin: "Hee-tam", note: "黑色" },
+              { malay: "Putih", chinese: "白色", pinyin: "Poo-teh", note: "白色" },
+              { malay: "Biru", chinese: "蓝色", pinyin: "Bee-roo", note: "蓝色" },
+              { malay: "Hijau", chinese: "绿色", pinyin: "Hee-jow", note: "绿色" }
+            ]
+          },
+          {
+            title: "6.2 基本句子 (AYAT ASAS)",
+            content: [
+              { malay: "Ini berapa harga?", chinese: "这个多少钱？", pinyin: "Ee-nee ber-ra-pa har-ga?", note: "问价格" },
+              { malay: "Mahal.", chinese: "很贵。", pinyin: "Ma-hal.", note: "说贵" },
+              { malay: "Murah sikit boleh?", chinese: "可以便宜一点吗？", pinyin: "Moo-rah see-keet bo-leh?", note: "讨价还价" },
+              { malay: "Saya mahu saiz M.", chinese: "我要 M 号。", pinyin: "Sa-ya ma-hoo sa-eez M.", note: "要尺码" },
+              { malay: "Ada warna lain?", chinese: "有别的颜色吗？", pinyin: "Ah-da war-na la-een?", note: "问颜色" },
+              { malay: "Saya mahu beli ini.", chinese: "我要买这个。", pinyin: "Sa-ya ma-hoo be-lee ee-nee.", note: "购买" }
+            ]
+          },
+          {
+            title: "6.3 对话示例 (CONTOH DIALOG) - 在服装店",
+            content: [
+              { malay: "游客: Ini berapa harga?", chinese: "游客：这个多少钱？", pinyin: "Ee-nee ber-ra-pa har-ga?", note: "询问价格" },
+              { malay: "商家: Seratus ringgit.", chinese: "商家：一百令吉。", pinyin: "Se-ra-toos ring-geet", note: "报价" },
+              { malay: "游客: Mahal. Murah sikit boleh?", chinese: "游客：很贵，可以便宜一点吗？", pinyin: "Ma-hal. Moo-rah see-keet bo-leh?", note: "还价" },
+              { malay: "商家: Baik, sembilan puluh ringgit.", chinese: "商家：好，九十令吉。", pinyin: "Ba-eek, sem-bee-lan poo-loo ring-geet", note: "降价" },
+              { malay: "游客: Saya mahu saiz M, warna hitam.", chinese: "游客：我要 M 号，黑色。", pinyin: "Sa-ya ma-hoo sa-eez M, war-na hee-tam", note: "指定尺码颜色" },
+              { malay: "商家: Baik.", chinese: "商家：好的。", pinyin: "Ba-eek", note: "确认" }
+            ]
+          },
+          {
+            title: "6.4 互动游戏 - 虚拟精品店 🛍️",
+            isGame: true,
+            gameType: "boutique",
+            content: {
+              items: [
+                { 
+                  id: 1, 
+                  type: "shirt", 
+                  color: "merah", 
+                  colorChinese: "红色",
+                  colorHex: "#EF4444",
+                  size: "M", 
+                  emoji: "👕",
+                  question: "顾客想要什么？",
+                  options: [
+                    { text: "Warna hitam, saiz L", chinese: "黑色，L号", correct: false, wrongWord: "Hitam" },
+                    { text: "Warna merah, saiz M", chinese: "红色，M号", correct: true },
+                    { text: "Warna putih, saiz S", chinese: "白色，S号", correct: false, wrongWord: "Putih" }
+                  ]
+                },
+                { 
+                  id: 2, 
+                  type: "dress", 
+                  color: "biru", 
+                  colorChinese: "蓝色",
+                  colorHex: "#3B82F6",
+                  size: "L", 
+                  emoji: "👗",
+                  question: "这位顾客需要什么？",
+                  options: [
+                    { text: "Warna biru, saiz L", chinese: "蓝色，L号", correct: true },
+                    { text: "Warna merah, saiz M", chinese: "红色，M号", correct: false, wrongWord: "Merah" },
+                    { text: "Warna biru, saiz S", chinese: "蓝色，S号", correct: false, wrongWord: "S" }
+                  ]
+                },
+                { 
+                  id: 3, 
+                  type: "pants", 
+                  color: "hitam", 
+                  colorChinese: "黑色",
+                  colorHex: "#1F2937",
+                  size: "S", 
+                  emoji: "👖",
+                  question: "请选择正确的商品描述",
+                  options: [
+                    { text: "Warna hitam, saiz M", chinese: "黑色，M号", correct: false, wrongWord: "M" },
+                    { text: "Warna putih, saiz S", chinese: "白色，S号", correct: false, wrongWord: "Putih" },
+                    { text: "Warna hitam, saiz S", chinese: "黑色，S号", correct: true }
+                  ]
+                },
+                { 
+                  id: 4, 
+                  type: "jacket", 
+                  color: "hijau", 
+                  colorChinese: "绿色",
+                  colorHex: "#10B981",
+                  size: "M", 
+                  emoji: "🧥",
+                  question: "顾客要买什么？",
+                  options: [
+                    { text: "Warna hijau, saiz M", chinese: "绿色，M号", correct: true },
+                    { text: "Warna biru, saiz M", chinese: "蓝色，M号", correct: false, wrongWord: "Biru" },
+                    { text: "Warna hijau, saiz L", chinese: "绿色，L号", correct: false, wrongWord: "L" }
+                  ]
+                },
+                { 
+                  id: 5, 
+                  type: "shoes", 
+                  color: "putih", 
+                  colorChinese: "白色",
+                  colorHex: "#F3F4F6",
+                  size: "L", 
+                  emoji: "👟",
+                  question: "这是什么商品？",
+                  options: [
+                    { text: "Warna hitam, saiz L", chinese: "黑色，L号", correct: false, wrongWord: "Hitam" },
+                    { text: "Warna putih, saiz M", chinese: "白色，M号", correct: false, wrongWord: "M" },
+                    { text: "Warna putih, saiz L", chinese: "白色，L号", correct: true }
+                  ]
+                },
+                { 
+                  id: 6, 
+                  type: "hat", 
+                  color: "merah", 
+                  colorChinese: "红色",
+                  colorHex: "#EF4444",
+                  size: "S", 
+                  emoji: "🧢",
+                  question: "顾客想要哪一个？",
+                  options: [
+                    { text: "Warna merah, saiz S", chinese: "红色，S号", correct: true },
+                    { text: "Warna merah, saiz L", chinese: "红色，L号", correct: false, wrongWord: "L" },
+                    { text: "Warna biru, saiz S", chinese: "蓝色，S号", correct: false, wrongWord: "Biru" }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            title: "6.5 文化笔记 (NOTA BUDAYA)",
+            content: [
+              { malay: "Tempat tawar-menawar", chinese: "讨价还价地点", pinyin: "Tem-pat ta-war me-na-war", note: "通常在集市允许讨价还价，但在大型购物中心通常是固定价格" },
+              { malay: "Cara sopan", chinese: "礼貌协商", pinyin: "Cha-ra so-pan", note: "讲价时请保持微笑并使用礼貌的语气" },
+              { malay: "Ucap terima kasih", chinese: "基本礼仪", pinyin: "Oo-chap ter-ree-ma ka-seh", note: "即使最后没有购买，也请说声 'Terima kasih'" },
+              { malay: "Harga tetap", chinese: "固定价格", pinyin: "Har-ga te-tap", note: "在购物中心或连锁店，价格通常是固定的，不适合讨价还价" }
+            ]
+          }
+        ]
+      },
+      7: {
+        title: "方向与位置",
+        malay: "Arah & Lokasi",
+        pinyin: "Fāngxiàng yǔ wèizhì",
+        icon: "🗺️",
+        color: "from-green-400 to-emerald-500",
+        youtubeLink: "https://youtu.be/bD279e1Hyrs?si=8FW9-iStzT5p45gv",
+        intro: "在本单元结束时，参与者将能够：礼貌地询问方向、理解基本方向（左、右、前、后）、使用城市和公共场所的地点词汇。",
+        sections: [
+          {
+            title: "7.1 重要词汇 (PERKATAAN PENTING)",
+            content: [
+              { malay: "Di mana", chinese: "在哪里", pinyin: "Dee ma-na", note: "在哪里" },
+              { malay: "Jalan", chinese: "路", pinyin: "Ja-lan", note: "路" },
+              { malay: "Kiri", chinese: "左边", pinyin: "Kee-ree", note: "左边" },
+              { malay: "Kanan", chinese: "右边", pinyin: "Ka-nan", note: "右边" },
+              { malay: "Depan", chinese: "前面", pinyin: "De-pan", note: "前面" },
+              { malay: "Belakang", chinese: "后面", pinyin: "Be-la-kang", note: "后面" },
+              { malay: "Lurus", chinese: "直走", pinyin: "Loo-roos", note: "直走" },
+              { malay: "Berhenti", chinese: "停", pinyin: "Ber-hen-tee", note: "停" },
+              { malay: "Dekat", chinese: "近", pinyin: "De-kat", note: "近" },
+              { malay: "Jauh", chinese: "远", pinyin: "Ja-ooh", note: "远" }
+            ]
+          },
+          {
+            title: "7.2 公共场所 (TEMPAT AWAM)",
+            content: [
+              { malay: "Tandas", chinese: "厕所", pinyin: "Tan-das", note: "厕所" },
+              { malay: "Hospital", chinese: "医院", pinyin: "Hos-pee-tal", note: "医院" },
+              { malay: "Balai polis", chinese: "警察局", pinyin: "Ba-la-ee po-lees", note: "警察局" },
+              { malay: "Stesen", chinese: "车站", pinyin: "S-te-sen", note: "车站" },
+              { malay: "Hotel", chinese: "酒店", pinyin: "Ho-tel", note: "酒店" },
+              { malay: "Restoran", chinese: "餐厅", pinyin: "Res-to-ran", note: "餐厅" },
+              { malay: "Pasar", chinese: "市场", pinyin: "Pa-sar", note: "市场" },
+              { malay: "Bank", chinese: "银行", pinyin: "Beng-k", note: "银行" }
+            ]
+          },
+          {
+            title: "7.3 基本句子 (AYAT ASAS)",
+            content: [
+              { malay: "Di mana tandas?", chinese: "厕所在哪里？", pinyin: "Dee ma-na tan-das?", note: "问厕所" },
+              { malay: "Di mana hotel ini?", chinese: "这个酒店在哪里？", pinyin: "Dee ma-na ho-tel ee-nee?", note: "问酒店" },
+              { malay: "Pergi lurus.", chinese: "一直走。", pinyin: "Per-gee loo-roos.", note: "直走" },
+              { malay: "Belok kiri.", chinese: "向左转。", pinyin: "Be-lok kee-ree.", note: "左转" },
+              { malay: "Belok kanan.", chinese: "向右转。", pinyin: "Be-lok ka-nan.", note: "右转" },
+              { malay: "Di depan.", chinese: "在前面。", pinyin: "Dee de-pan.", note: "在前面" },
+              { malay: "Di belakang.", chinese: "在后面。", pinyin: "Dee be-la-kang.", note: "在后面" }
+            ]
+          },
+          {
+            title: "7.4 对话示例 (CONTOH DIALOG) - 询问去厕所的方向",
+            content: [
+              { malay: "游客: Maaf, di mana tandas?", chinese: "游客：不好意思，厕所在哪里？", pinyin: "Ma-af, dee ma-na tan-das?", note: "问路" },
+              { malay: "当地人: Pergi lurus, kemudian belok kanan.", chinese: "当地人：一直走，然后向右转。", pinyin: "Per-gee loo-roos, ke-mun-dyan be-lok ka-nan.", note: "指路" },
+              { malay: "游客: Terima kasih.", chinese: "游客：谢谢。", pinyin: "Ter-ree-ma ka-seh", note: "感谢" },
+              { malay: "当地人: Sama-sama.", chinese: "当地人：不客气。", pinyin: "Sa-ma sa-ma", note: "回应" }
+            ]
+          },
+          {
+            title: "7.5 练习 (LATIHAN) - 城市导航游戏 🗺️",
+            isGame: true,
+            gameType: "navigation",
+            content: {
+              missions: [
+                {
+                  id: 1,
+                  name: "找到厕所",
+                  emoji: "🚻",
+                  target: "tandas",
+                  steps: [
+                    {
+                      instruction: "Pergi lurus",
+                      instructionChinese: "一直走",
+                      options: [
+                        { text: "向前走", direction: "forward", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "向右转", direction: "right", correct: false }
+                      ]
+                    },
+                    {
+                      instruction: "Belok kanan",
+                      instructionChinese: "向右转",
+                      options: [
+                        { text: "向右转", direction: "right", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "继续直走", direction: "forward", correct: false }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 2,
+                  name: "去餐厅",
+                  emoji: "🍜",
+                  target: "restoran",
+                  steps: [
+                    {
+                      instruction: "Belok kiri",
+                      instructionChinese: "向左转",
+                      options: [
+                        { text: "向左转", direction: "left", correct: true },
+                        { text: "向右转", direction: "right", correct: false },
+                        { text: "一直走", direction: "forward", correct: false }
+                      ]
+                    },
+                    {
+                      instruction: "Pergi lurus",
+                      instructionChinese: "一直走",
+                      options: [
+                        { text: "继续向前", direction: "forward", correct: true },
+                        { text: "向右转", direction: "right", correct: false },
+                        { text: "向左转", direction: "left", correct: false }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 3,
+                  name: "找银行",
+                  emoji: "🏦",
+                  target: "bank",
+                  steps: [
+                    {
+                      instruction: "Pergi lurus",
+                      instructionChinese: "一直走",
+                      options: [
+                        { text: "向前走", direction: "forward", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "停下", direction: "stop", correct: false }
+                      ]
+                    },
+                    {
+                      instruction: "Belok kiri",
+                      instructionChinese: "向左转",
+                      options: [
+                        { text: "向左转", direction: "left", correct: true },
+                        { text: "向右转", direction: "right", correct: false },
+                        { text: "一直走", direction: "forward", correct: false }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 4,
+                  name: "找医院",
+                  emoji: "🏥",
+                  target: "hospital",
+                  steps: [
+                    {
+                      instruction: "Belok kanan",
+                      instructionChinese: "向右转",
+                      options: [
+                        { text: "向右转", direction: "right", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "一直走", direction: "forward", correct: false }
+                      ]
+                    },
+                    {
+                      instruction: "Belok kiri",
+                      instructionChinese: "向左转",
+                      options: [
+                        { text: "向左转", direction: "left", correct: true },
+                        { text: "向右转", direction: "right", correct: false },
+                        { text: "停下", direction: "stop", correct: false }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id: 5,
+                  name: "找车站",
+                  emoji: "🚉",
+                  target: "stesen",
+                  steps: [
+                    {
+                      instruction: "Pergi lurus",
+                      instructionChinese: "一直走",
+                      options: [
+                        { text: "向前走", direction: "forward", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "向右转", direction: "right", correct: false }
+                      ]
+                    },
+                    {
+                      instruction: "Belok kanan",
+                      instructionChinese: "向右转",
+                      options: [
+                        { text: "向右转", direction: "right", correct: true },
+                        { text: "向左转", direction: "left", correct: false },
+                        { text: "一直走", direction: "forward", correct: false }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            title: "7.6 文化笔记 (NOTA BUDAYA)",
+            content: [
+              { malay: "Ucapan sopan", chinese: "礼貌开头", pinyin: "U-cha-pan so-pan", note: "询问方向时，请先说 'Maaf' (对不起/不好意思)" },
+              { malay: "Guna alat", chinese: "使用工具", pinyin: "Gu-na a-lat", note: "可以在手机上展示地图或地址，以便对方更清楚地指路" },
+              { malay: "Ucap terima kasih", chinese: "表达感谢", pinyin: "U-chap ter-ree-ma ka-seh", note: "对方指路后，请务必说声 'Terima kasih'" }
+            ]
+          }
+        ]
+      },
+      8: {
+        title: "紧急情况与健康",
+        malay: "KECEMASAN & KESIHATAN",
+        pinyin: "Jǐnjí qíngkuàng yǔ jiànkāng",
+        icon: "🚑",
+        color: "from-fuchsia-400 to-pink-500",
+        youtubeLink: "https://youtu.be/LZC8KSC22cI?si=ZjTA8DhtluUizFMD",
+        intro: "在本单元结束时，参与者将能够：在紧急情况下寻求帮助、表达生病或危险的状态、了解获取帮助的地点（医院、警察局）。",
+        sections: [
+          {
+            title: "8.1 紧急求助词汇",
+            content: [
+              { malay: "Tolong!", chinese: "救命！", pinyin: "To-long", note: "紧急求助" },
+              { malay: "Bantuan!", chinese: "帮忙！", pinyin: "Ban-too-an", note: "请求帮助" },
+              { malay: "Polis", chinese: "警察", pinyin: "Po-lees", note: "警察" },
+              { malay: "Ambulans", chinese: "救护车", pinyin: "Am-boo-lans", note: "救护车" },
+              { malay: "Kecemasan", chinese: "紧急情况", pinyin: "Ke-che-ma-san", note: "紧急状况" }
+            ]
+          },
+          {
+            title: "8.2 表达生病",
+            content: [
+              { malay: "Saya sakit.", chinese: "我生病了。", pinyin: "Sa-ya sa-keet", note: "感觉生病" },
+              { malay: "Saya demam.", chinese: "我发烧了。", pinyin: "Sa-ya de-mam", note: "发烧" },
+              { malay: "Saya pening.", chinese: "我头晕。", pinyin: "Sa-ya pe-ning", note: "头晕" },
+              { malay: "Saya loya.", chinese: "我想吐。", pinyin: "Sa-ya lo-ya", note: "恶心" },
+              { malay: "Saya sakit perut.", chinese: "我肚子痛。", pinyin: "Sa-ya sa-keet pe-root", note: "腹痛" }
+            ]
+          },
+          {
+            title: "8.3 重要地点",
+            content: [
+              { malay: "Hospital", chinese: "医院", pinyin: "Hos-pee-tal", note: "医院" },
+              { malay: "Klinik", chinese: "诊所", pinyin: "Klee-neek", note: "诊所" },
+              { malay: "Balai polis", chinese: "警察局", pinyin: "Ba-la-ee po-lees", note: "警察局" },
+              { malay: "Farmasi", chinese: "药房", pinyin: "Far-ma-see", note: "药店" },
+              { malay: "Kecemasan", chinese: "急诊室", pinyin: "Ke-che-ma-san", note: "急诊" }
+            ]
+          },
+          {
+            title: "8.4 紧急对话",
+            content: [
+              { malay: "游客: Tolong! Saya perlukan bantuan!", chinese: "游客：救命！我需要帮助！", pinyin: "To-long! Sa-ya per-loo-kan ban-too-an", note: "紧急求助" },
+              { malay: "当地人: Apa masalah?", chinese: "当地人：什么问题？", pinyin: "A-pa ma-sa-lah?", note: "询问情况" },
+              { malay: "游客: Saya sakit. Di mana hospital?", chinese: "游客：我生病了。医院在哪里？", pinyin: "Sa-ya sa-keet. Dee ma-na hos-pee-tal?", note: "问医院位置" },
+              { malay: "当地人: Hospital ada dekat sini.", chinese: "当地人：医院就在附近。", pinyin: "Hos-pee-tal ah-da de-kat see-nee", note: "指示位置" }
+            ]
+          },
+          {
+            title: "8.5 文化笔记",
+            content: [
+              { malay: "Nombor kecemasan", chinese: "紧急电话", pinyin: "Nom-bor ke-che-ma-san", note: "马来西亚紧急电话：999（警察/救护车）" },
+              { malay: "Bawa kad pengenalan", chinese: "带身份证", pinyin: "Ba-wa kad peng-e-na-lan", note: "去医院时带上护照和旅行保险" },
+              { malay: "Kesabaran", chinese: "保持耐心", pinyin: "Ke-sa-ba-ran", note: "马来西亚医院有时需要等待，请保持耐心" },
+              { malay: "Insurans", chinese: "旅行保险", pinyin: "In-soo-rans", note: "建议购买旅行保险覆盖医疗费用" }
+            ]
+          }
+        ]
+      },
+      9: {
+        title: "文化与礼仪",
+        malay: "Budaya & Etika Komunikasi Malaysia",
+        pinyin: "Wénhuà yǔ lǐyí",
+        icon: "🎭",
+        color: "from-indigo-400 to-indigo-600",
+        youtubeLink: "https://youtube.com/@fyiilysm?si=TMOv8w7TZzV_Zq4F&t=0",
+        intro: "在本单元结束时，参与者将能够：了解马来西亚文化禁忌、掌握基本礼仪、尊重多元文化习俗。",
+        sections: [
+          {
+            title: "9.1 文化禁忌",
+            content: [
+              { malay: "Jangan gunakan tangan kiri", chinese: "不要用左手", pinyin: "Ja-ngan gu-na-kan tan-gan ki-ri", note: "左手被认为不洁" },
+              { malay: "Jangan sentuh kepala orang", chinese: "不要摸别人的头", pinyin: "Ja-ngan sen-tooh ke-pa-la o-rang", note: "头部被认为是神圣的" },
+              { malay: "Jangan tunjuk dengan kaki", chinese: "不要用脚指", pinyin: "Ja-ngan toon-jook deng-an ka-kee", note: "脚被认为是最低部位" },
+              { malay: "Tanggalkan kasut", chinese: "脱鞋", pinyin: "Tang-gal-kan ka-soot", note: "进入宗教场所和家庭要脱鞋" },
+              { malay: "Hormati waktu solat", chinese: "尊重祈祷时间", pinyin: "Hor-ma-tee wa-ktu so-lat", note: "穆斯林每天祈祷五次" }
+            ]
+          },
+          {
+            title: "9.2 餐桌礼仪",
+            content: [
+              { malay: "Gunakan tangan kanan", chinese: "用右手", pinyin: "Gu-na-kan tan-gan ka-nan", note: "传统马来餐用右手抓饭" },
+              { malay: "Tunggu tuan rumah", chinese: "等待主人", pinyin: "Toong-goo too-an roo-mah", note: "等主人先开始吃" },
+              { malay: "Jangan buat bising", chinese: "不要吵闹", pinyin: "Ja-ngan boo-at bee-sing", note: "吃饭时保持安静" },
+              { malay: "Ucap terima kasih", chinese: "说谢谢", pinyin: "Oo-chap ter-ree-ma ka-seh", note: "饭后感谢主人" },
+              { malay: "Hidangan halal", chinese: "清真食品", pinyin: "Hi-dang-an ha-lal", note: "尊重穆斯林饮食限制" }
+            ]
+          },
+          {
+            title: "9.3 问候方式",
+            content: [
+              { malay: "Assalamualaikum", chinese: "愿和平与你同在", pinyin: "As-sa-la-mu-a-lai-kum", note: "穆斯林问候语" },
+              { malay: "Waalaikumsalam", chinese: "愿和平也与你同在", pinyin: "Wa-a-lai-kum-sa-lam", note: "回应问候" },
+              { malay: "Salam sejahtera", chinese: "平安问候", pinyin: "Sa-lam se-jah-te-ra", note: "通用问候语" },
+              { malay: "Senyum dan angguk", chinese: "微笑点头", pinyin: "Se-nyum dan ang-gook", note: "礼貌的肢体语言" },
+              { malay: "Beri salam", chinese: "主动问候", pinyin: "Be-ree sa-lam", note: "见到人主动问候" }
+            ]
+          },
+          {
+            title: "9.4 多元文化尊重",
+            content: [
+              { malay: "Hormati semua agama", chinese: "尊重所有宗教", pinyin: "Hor-ma-tee se-moo-a a-ga-ma", note: "马来西亚有伊斯兰教、佛教、基督教、印度教" },
+              { malay: "Pakaian sopan", chinese: "得体着装", pinyin: "Pa-ka-ian so-pan", note: "宗教场所要穿着得体" },
+              { malay: "Musim perayaan", chinese: "节日季节", pinyin: "Moo-sim per-a-ya-an", note: "尊重开斋节、农历新年、屠妖节等" },
+              { malay: "Bahasa tubuh", chinese: "肢体语言", pinyin: "Ba-ha-sa too-buh", note: "保持适度的眼神接触和距离" },
+              { malay: "Bersabar", chinese: "保持耐心", pinyin: "Ber-sa-bar", note: "马来西亚人生活节奏较慢，请耐心" }
+            ]
+          },
+          {
+            title: "9.5 实用贴士",
+            content: [
+              { malay: "Senyum selalu", chinese: "常带微笑", pinyin: "Se-nyum se-la-loo", note: "微笑是最好的沟通" },
+              { malay: "Bercakap perlahan", chinese: "慢慢说", pinyin: "Ber-cha-kap per-la-han", note: "说话慢一点，清晰一点" },
+              { malay: "Gunakan 'Encik'/'Puan'", chinese: "使用先生/女士", pinyin: "Gu-na-kan 'En-cik'/'Pu-an'", note: "礼貌称呼" },
+              { malay: "Hargai budaya", chinese: "珍惜文化", pinyin: "Har-ga-ee boo-da-ya", note: "马来西亚文化丰富多样，请珍惜" },
+              { malay: "Nikmati perbezaan", chinese: "享受差异", pinyin: "Nik-ma-tee per-be-za-an", note: "享受文化的多样性" }
+            ]
+          }
+        ]
+      }
+    };
+
+    // Progress data
+    let progress = {
+      chapters: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 },
+      wordsLearned: 0,
+      sentencesLearned: 0
+    };
+
+    // Load progress from localStorage
+    function loadProgress() {
+      try {
+        const saved = localStorage.getItem('malayProgress');
+        if (saved) {
+          progress = JSON.parse(saved);
+        }
+      } catch (e) {
+        console.warn('Failed to load progress:', e);
+      }
+    }
+
+    // Save progress to localStorage
+    function saveProgress() {
+      try {
+        localStorage.setItem('malayProgress', JSON.stringify(progress));
+      } catch (e) {
+        console.warn('Failed to save progress:', e);
+      }
+    }
+
+    // Initialize
+    loadProgress();
+
+    // Config
+    const defaultConfig = {
+      site_title: "马来语快速入门教程",
+      welcome_text: "专为中国游客设计"
+    };
+
+    let config = { ...defaultConfig };
+
+    // Navigation functions
+    function showHome() {
+      document.getElementById('home-view').classList.remove('hidden');
+      document.getElementById('chapter-view').classList.add('hidden');
+      document.getElementById('progress-view').classList.add('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function showProgress() {
+      document.getElementById('home-view').classList.add('hidden');
+      document.getElementById('chapter-view').classList.add('hidden');
+      document.getElementById('progress-view').classList.remove('hidden');
+      renderProgressView();
+      window.scrollTo(0, 0);
+    }
+
+    function showChapter(num) {
+      const homeView = document.getElementById('home-view');
+      const chapterView = document.getElementById('chapter-view');
+      const progressView = document.getElementById('progress-view');
+
+      if (homeView) homeView.classList.add('hidden');
+      if (progressView) progressView.classList.add('hidden');
+      if (chapterView) chapterView.classList.remove('hidden');
+
+      renderChapter(num);
+      window.scrollTo(0, 0);
+    }
+
+    function renderChapter(num) {
+      const chapter = chapters[num];
+      const container = document.getElementById('chapter-view');
+
+      // Special chapters (8 & 9) with custom styles
+      if (Number(num) === 8) {
+        container.innerHTML = renderChapter8Mindmap();
+        window.scrollTo(0, 0);
+        return;
+      }
+      
+      if (Number(num) === 9) {
+        container.innerHTML = renderChapter9();
+        window.scrollTo(0, 0);
+        return;
+      }
+
+      // Standard chapters (1-7)
+      if (!chapter) {
+        container.innerHTML = `<div class="p-6 bg-emerald-900/40 rounded-2xl border border-emerald-700/40">
+          <p class="text-emerald-200">Chapter ${num} not found.</p>
+        </div>`;
+        return;
+      }
+
+      const sectionsHtml = chapter.sections.map((section, sIdx) => {
+        const delay = sIdx * 0.1;
+        const gameId = `game-${num}-${sIdx}`;
+
+        if (section.isGame) {
+          // Game sections
+          if (section.gameType === 'boutique') {
+            return `
+              <div class="bg-gradient-to-br from-cyan-800/50 to-blue-800/50 rounded-2xl p-6 border border-cyan-700/50 fade-in" style="animation-delay:${delay}s">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span class="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center text-sm">🛍️</span>
+                  ${section.title}
+                </h3>
+                <div id="${gameId}" class="space-y-4"></div>
+              </div>
+            `;
+          }
+          
+          if (section.gameType === 'matching') {
+            return `
+              <div class="bg-gradient-to-br from-purple-800/50 to-violet-800/50 rounded-2xl p-6 border border-purple-700/50 fade-in" style="animation-delay:${delay}s">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-sm">🎴</span>
+                  ${section.title}
+                </h3>
+                <div id="${gameId}" class="space-y-4"></div>
+              </div>
+            `;
+          }
+          
+          if (section.gameType === 'navigation') {
+            return `
+              <div class="bg-gradient-to-br from-green-800/50 to-emerald-800/50 rounded-2xl p-6 border border-green-700/50 fade-in" style="animation-delay:${delay}s">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-sm">🗺️</span>
+                  ${section.title}
+                </h3>
+                <div id="${gameId}" class="space-y-4"></div>
+              </div>
+            `;
+          }
+
+          // Default game
+          return `
+            <div class="bg-gradient-to-br from-blue-800/50 to-indigo-800/50 rounded-2xl p-6 border border-blue-700/50 fade-in" style="animation-delay:${delay}s">
+              <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <span class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-sm">🎮</span>
+                ${section.title}
+              </h3>
+              <div id="${gameId}" class="space-y-4"></div>
+            </div>
+          `;
+        }
+
+        if (section.isExercise) {
+          // Exercise sections
+          return `
+            <div class="bg-gradient-to-br from-orange-800/50 to-red-800/50 rounded-2xl p-6 border border-orange-700/50 fade-in" style="animation-delay:${delay}s">
+              <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                <span class="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-sm">✏️</span>
+                ${section.title}
+              </h3>
+              <div class="space-y-4">
+                ${section.content.map((item, iIdx) => `
+                  <div class="bg-emerald-900/50 rounded-xl p-5 border border-emerald-700/30" id="exercise-${num}-${sIdx}-${iIdx}">
+                    <p class="text-white font-medium mb-3 text-lg">${iIdx + 1}. ${item.question}</p>
+                    <div class="space-y-2 mb-3">
+                      ${item.options.map((opt) => `
+                        <button onclick="checkAnswer(${num}, ${sIdx}, ${iIdx}, '${opt.charAt(0)}', this)"
+                          class="w-full text-left p-3 rounded-lg bg-emerald-800/50 hover:bg-emerald-700/50 transition-colors border border-emerald-700/30 text-emerald-100">
+                          ${opt}
+                        </button>
+                      `).join('')}
+                    </div>
+                    <div id="feedback-${num}-${sIdx}-${iIdx}" class="hidden mt-3 p-3 rounded-lg"></div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="mt-6 p-4 bg-emerald-900/50 rounded-xl border border-emerald-700/30 text-center">
+                <p class="text-emerald-300"><span class="font-bold text-yellow-400" id="score-${num}-${sIdx}">0</span> / ${section.content.length} 正确</p>
+              </div>
+            </div>
+          `;
+        }
+
+        // Normal vocabulary section
+        if (section.isCustomHTML) {
+  return `
+    <div class="fade-in" style="animation-delay:${delay}s">
+      ${section.content}
+    </div>
+  `;
+}
+
+// Normal vocabulary section
+return `
+  <div class="bg-emerald-800/50 rounded-2xl p-6 border border-emerald-700/50 fade-in" style="animation-delay:${delay}s">
+    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+      <span class="w-8 h-8 bg-emerald-700 rounded-lg flex items-center justify-center text-sm">${sIdx + 1}</span>
+      ${section.title}
+    </h3>
+    <div class="space-y-3">
+      ${section.content.map((item, iIdx) => `
+        <div class="vocab-item bg-emerald-900/50 rounded-xl p-4 border border-emerald-700/30 cursor-pointer"
+             onclick="markLearned(${num}, ${sIdx}, ${iIdx}, this)">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-lg font-bold text-yellow-400 malay-text">${item.malay}</span>
+                <span class="text-emerald-300 text-sm">[${item.pinyin || "-"}]</span>
+              </div>
+              <p class="text-white text-lg mb-1">${item.chinese}</p>
+              <p class="text-emerald-400 text-sm">💡 ${item.note || ""}</p>
+            </div>
+            <button class="audio-btn w-10 h-10 bg-emerald-700 hover:bg-emerald-600 rounded-full flex items-center justify-center flex-shrink-0"
+                    onclick="event.stopPropagation(); speak('${String(item.malay).replace(/'/g, "\\'")}')">
+              🔊
+            </button>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  </div>
+`;
+      }).join('');
+
+      // Navigation buttons
+      const nextBtn = num < 9 
+        ? `<button onclick="showChapter(${num + 1})" class="practice-btn bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium flex items-center gap-2 text-emerald-900">
+            下一章 →
+           </button>`
+        : `<button onclick="showHome()" class="practice-btn bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium flex items-center gap-2 text-emerald-900">
+            完成学习 🎉
+           </button>`;
+
+      container.innerHTML = `
+        <div class="fade-in">
+          <div class="flex items-center gap-4 mb-6">
+            <button onclick="showHome()" class="w-10 h-10 bg-emerald-800 hover:bg-emerald-700 rounded-xl flex items-center justify-center transition-colors">←</button>
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 bg-gradient-to-br ${chapter.color} rounded-2xl flex items-center justify-center text-3xl shadow-lg">${chapter.icon}</div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="bg-emerald-700/50 px-3 py-1 rounded-full text-xs text-emerald-300">第${num}章</span>
+                  
+                </div>
+                <h2 class="text-2xl font-bold">${chapter.title}</h2>
+                <p class="text-emerald-300 malay-text">${chapter.malay}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-emerald-800/50 to-teal-800/50 rounded-2xl p-6 mb-8 border border-emerald-700/50">
+            <p class="text-emerald-100 leading-relaxed">${chapter.intro}</p>
+            
+            ${chapter.youtubeLink ? `
+              <div class="mt-4 pt-4 border-t border-emerald-700/30">
+                <a href="${chapter.youtubeLink}" target="_blank" 
+                   class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-white text-sm transition-colors">
+                  <span>🎥 观看本章视频教程</span>
+                  <span>▶️</span>
+                </a>
+                <p class="text-emerald-300 text-xs mt-2">学习更轻松，观看视频讲解</p>
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="space-y-6 mb-8">${sectionsHtml}</div>
+
+          <div class="flex justify-between items-center">
+            ${num > 1 
+              ? `<button onclick="showChapter(${num - 1})" class="practice-btn bg-emerald-700 hover:bg-emerald-600 px-6 py-3 rounded-xl font-medium flex items-center gap-2">← 上一章</button>`
+              : '<div></div>'}
+            ${nextBtn}
+          </div>
+        </div>
+      `;
+
+      // Initialize games after rendering
+      chapter.sections.forEach((section, sIdx) => {
+        if (!section.isGame) return;
+        
+        if (section.gameType === 'boutique') {
+          initializeBoutiqueGame(num, sIdx, section.content);
+        } else if (section.gameType === 'matching') {
+          initializeMatchingGame(num, sIdx, section.content);
+        } else if (section.gameType === 'navigation') {
+          initializeNavigationGame(num, sIdx, section.content);
+        } else {
+          initializeGame(num, sIdx, section.content);
+        }
+      });
+    }
+
+    function initializeBoutiqueGame(chapterNum, sectionIdx, gameData) {
+      const gameId = `game-${chapterNum}-${sectionIdx}`;
+      const gameKey = `boutique-${chapterNum}-${sectionIdx}`;
+      
+      if (!gameState[gameKey]) {
+        gameState[gameKey] = {
+          currentItem: 0,
+          score: 0,
+          cart: []
+        };
+      }
+      
+      renderBoutiqueGame(gameId, gameKey, gameData);
+    }
+
+    function renderBoutiqueGame(gameId, gameKey, gameData) {
+      const state = gameState[gameKey];
+      const container = document.getElementById(gameId);
+      
+      if (state.currentItem >= gameData.items.length) {
+        // Game completed
+        container.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">🎉</div>
+            <h4 class="text-2xl font-bold mb-2">恭喜完成！</h4>
+            <p class="text-cyan-300 mb-4">你成功完成了所有${gameData.items.length}个订单！</p>
+            <div class="bg-cyan-900/30 rounded-xl p-6 mb-6 max-w-md mx-auto">
+              <p class="text-yellow-400 text-xl font-bold mb-2">得分: ${state.score} / ${gameData.items.length}</p>
+              <div class="text-left space-y-2 mt-4">
+                <p class="text-cyan-300 font-medium mb-2">购物车里的商品:</p>
+                ${state.cart.map(item => `
+                  <div class="flex items-center gap-2 text-white">
+                    <span class="text-2xl">${item.emoji}</span>
+                    <span>${item.colorChinese} · ${item.size}号</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <button onclick="resetBoutiqueGame('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium text-emerald-900">
+              🔄 再玩一次
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
+      const item = gameData.items[state.currentItem];
+      const progress = `${state.currentItem + 1} / ${gameData.items.length}`;
+      
+      container.innerHTML = `
+        <div class="mb-4 flex justify-between items-center">
+          <span class="text-cyan-300">订单进度: ${progress}</span>
+          <span class="text-yellow-400 font-bold">🛒 ${state.cart.length} 件商品</span>
+        </div>
+        
+        <div class="bg-cyan-900/30 rounded-2xl p-6 mb-6 border border-cyan-700/50">
+          <p class="text-cyan-300 text-sm mb-4 text-center">👤 ${item.question}</p>
+          
+          <div class="boutique-item bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 mb-6 border-4 border-dashed" style="border-color: ${item.colorHex}">
+            <div class="text-center">
+              <div class="text-8xl mb-4">${item.emoji}</div>
+              <div class="inline-block px-6 py-3 rounded-full text-white font-bold text-xl mb-3" style="background-color: ${item.colorHex}">
+                ${item.colorChinese}
+              </div>
+              <div class="bg-white/20 rounded-xl px-6 py-3 inline-block">
+                <span class="text-white font-bold text-2xl">尺码: ${item.size}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-3">
+            <p class="text-white font-medium mb-3">请选择正确的描述:</p>
+            ${item.options.map((opt, idx) => `
+              <button onclick="selectBoutiqueOption('${gameKey}', '${gameId}', ${idx}, ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                id="boutique-option-${idx}"
+                class="w-full text-left p-4 rounded-xl bg-cyan-800/30 hover:bg-cyan-700/50 border border-cyan-700/30 transition-all">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-white font-medium malay-text mb-1">${opt.text}</p>
+                    <p class="text-cyan-300 text-sm">${opt.chinese}</p>
+                  </div>
+                  <span class="text-2xl">👉</span>
+                </div>
+              </button>
+            `).join('')}
+          </div>
+        </div>
+        
+        <div id="boutique-feedback-${gameKey}" class="hidden"></div>
+      `;
+    }
+
+    function selectBoutiqueOption(gameKey, gameId, optionIdx, gameData) {
+      const state = gameState[gameKey];
+      const item = gameData.items[state.currentItem];
+      const selectedOption = item.options[optionIdx];
+      const feedbackDiv = document.getElementById(`boutique-feedback-${gameKey}`);
+      
+      // Disable all buttons
+      for (let i = 0; i < item.options.length; i++) {
+        const btn = document.getElementById(`boutique-option-${i}`);
+        if (btn) btn.disabled = true;
+      }
+      
+      if (selectedOption.correct) {
+        // Correct answer - fly to cart animation
+        state.score++;
+        state.cart.push(item);
+        
+        const selectedBtn = document.getElementById(`boutique-option-${optionIdx}`);
+        selectedBtn.classList.add('bg-green-600', 'border-green-400');
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-green-900/30 border border-green-700/50 rounded-xl p-4 text-center">
+            <p class="text-green-300 font-bold text-lg mb-2">✅ 太棒了！商品已加入购物车！</p>
+            <div class="text-6xl fly-to-cart">${item.emoji}</div>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+        
+        setTimeout(() => {
+          state.currentItem++;
+          renderBoutiqueGame(gameId, gameKey, gameData);
+        }, 1500);
+        
+      } else {
+        // Wrong answer - shake and highlight wrong word
+        const selectedBtn = document.getElementById(`boutique-option-${optionIdx}`);
+        selectedBtn.classList.add('bg-red-600', 'border-red-400', 'shake');
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-red-900/30 border border-red-700/50 rounded-xl p-4">
+            <p class="text-red-300 font-bold mb-2">❌ 不对哦！</p>
+            <p class="text-red-200">错误的词是: <span class="font-bold text-yellow-400">"${selectedOption.wrongWord}"</span></p>
+            <button onclick="retryBoutiqueItem('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+              class="mt-3 bg-orange-600 hover:bg-orange-500 px-6 py-2 rounded-lg font-medium text-white w-full">
+              🔄 再试一次
+            </button>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+      }
+    }
+
+    function retryBoutiqueItem(gameKey, gameId, gameData) {
+      renderBoutiqueGame(gameId, gameKey, gameData);
+    }
+
+    function resetBoutiqueGame(gameKey, gameId, gameData) {
+      gameState[gameKey] = {
+        currentItem: 0,
+        score: 0,
+        cart: []
+      };
+      
+      renderBoutiqueGame(gameId, gameKey, gameData);
+    }
+
+    function initializeNavigationGame(chapterNum, sectionIdx, gameData) {
+      const gameId = `game-${chapterNum}-${sectionIdx}`;
+      const gameKey = `navigation-${chapterNum}-${sectionIdx}`;
+      
+      if (!gameState[gameKey]) {
+        gameState[gameKey] = {
+          currentMission: 0,
+          currentStep: 0,
+          score: 0,
+          completedMissions: []
+        };
+      }
+      
+      renderNavigationGame(gameId, gameKey, gameData);
+    }
+
+    function renderNavigationGame(gameId, gameKey, gameData) {
+      const state = gameState[gameKey];
+      const container = document.getElementById(gameId);
+      
+      if (state.currentMission >= gameData.missions.length) {
+        // All missions completed
+        container.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">🎉</div>
+            <h4 class="text-2xl font-bold mb-2">太棒了！你完成了所有任务！</h4>
+            <p class="text-green-300 mb-4">你成功导航到了城市中的所有地点！</p>
+            <div class="bg-green-900/30 rounded-xl p-6 mb-6 max-w-md mx-auto">
+              <p class="text-yellow-400 text-xl font-bold mb-4">得分: ${state.score} / ${gameData.missions.length * 2}</p>
+              <div class="text-left space-y-2">
+                <p class="text-green-300 font-medium mb-2">完成的任务:</p>
+                ${state.completedMissions.map(mission => `
+                  <div class="flex items-center gap-2 text-white">
+                    <span class="text-2xl">${mission.emoji}</span>
+                    <span>✅ ${mission.name}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <button onclick="resetNavigationGame('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium text-emerald-900">
+              🔄 再玩一次
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
+      const mission = gameData.missions[state.currentMission];
+      const step = mission.steps[state.currentStep];
+      const progress = `任务 ${state.currentMission + 1}/${gameData.missions.length} · 步骤 ${state.currentStep + 1}/${mission.steps.length}`;
+      
+      container.innerHTML = `
+        <div class="mb-4 flex justify-between items-center">
+          <span class="text-green-300">${progress}</span>
+          <span class="text-yellow-400 font-bold">⭐ ${state.score} 分</span>
+        </div>
+        
+        <div class="bg-green-900/30 rounded-2xl p-6 mb-6 border border-green-700/50">
+          <div class="text-center mb-4">
+            <div class="text-6xl mb-3">${mission.emoji}</div>
+            <h4 class="text-xl font-bold text-white mb-2">目标: ${mission.name}</h4>
+          </div>
+          
+          <div class="bg-emerald-900/50 rounded-xl p-4 mb-4">
+            <p class="text-emerald-300 text-sm mb-2">当地人说:</p>
+            <p class="text-white text-lg font-medium malay-text mb-1">"${step.instruction}"</p>
+            <p class="text-emerald-300 text-sm">(${step.instructionChinese})</p>
+          </div>
+          
+          <div class="space-y-3">
+            <p class="text-white font-medium mb-2">你应该:</p>
+            ${step.options.map((opt, idx) => `
+              <button onclick="selectNavigationOption('${gameKey}', '${gameId}', ${idx}, ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                id="nav-option-${idx}"
+                class="w-full text-left p-4 rounded-xl bg-green-800/30 hover:bg-green-700/50 border border-green-700/30 transition-all flex items-center justify-between">
+                <span class="text-white font-medium">${opt.text}</span>
+                <span class="text-2xl">
+                  ${opt.direction === 'forward' ? '⬆️' : opt.direction === 'left' ? '⬅️' : opt.direction === 'right' ? '➡️' : '🛑'}
+                </span>
+              </button>
+
+            `).join('')}
+          </div>
+        </div>
+        
+        <div id="nav-feedback-${gameKey}" class="hidden"></div>
+      `;
+    }
+
+    function selectNavigationOption(gameKey, gameId, optionIdx, gameData) {
+      const state = gameState[gameKey];
+      const mission = gameData.missions[state.currentMission];
+      const step = mission.steps[state.currentStep];
+      const selectedOption = step.options[optionIdx];
+      const feedbackDiv = document.getElementById(`nav-feedback-${gameKey}`);
+      
+      // Disable all buttons
+      for (let i = 0; i < step.options.length; i++) {
+        const btn = document.getElementById(`nav-option-${i}`);
+        if (btn) btn.disabled = true;
+      }
+      
+      if (selectedOption.correct) {
+        // Correct answer
+        state.score++;
+        
+        const selectedBtn = document.getElementById(`nav-option-${optionIdx}`);
+        selectedBtn.classList.add('bg-green-600', 'border-green-400');
+        
+        // Check if this was the last step
+        if (state.currentStep === mission.steps.length - 1) {
+          // Mission completed
+          state.completedMissions.push(mission);
+          
+          feedbackDiv.innerHTML = `
+            <div class="bg-green-900/30 border border-green-700/50 rounded-xl p-4 text-center">
+              <div class="text-4xl mb-2">${mission.emoji}</div>
+              <p class="text-green-300 font-bold text-lg mb-2">✅ 太棒了！你找到了${mission.name}！</p>
+              <button onclick="nextNavigationMission('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                class="mt-3 bg-green-600 hover:bg-green-500 px-6 py-2 rounded-lg font-medium text-white">
+                ${state.currentMission < gameData.missions.length - 1 ? '下一个任务 →' : '查看结果 🎉'}
+              </button>
+            </div>
+          `;
+        } else {
+          // Go to next step
+          feedbackDiv.innerHTML = `
+            <div class="bg-green-900/30 border border-green-700/50 rounded-xl p-4 text-center">
+              <p class="text-green-300 font-bold mb-2">✅ 正确！继续前进！</p>
+              <button onclick="nextNavigationStep('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                class="mt-2 bg-green-600 hover:bg-green-500 px-6 py-2 rounded-lg font-medium text-white">
+                继续 →
+              </button>
+            </div>
+          `;
+        }
+        
+        feedbackDiv.classList.remove('hidden');
+        
+      } else {
+        // Wrong answer
+        const selectedBtn = document.getElementById(`nav-option-${optionIdx}`);
+        selectedBtn.classList.add('bg-red-600', 'border-red-400', 'shake');
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-red-900/30 border border-red-700/50 rounded-xl p-4">
+            <p class="text-red-300 font-bold mb-2">❌ 不对哦！走错方向了！</p>
+            <p class="text-red-200">再听一遍指示，选择正确的方向。</p>
+            <button onclick="retryNavigationStep('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+              class="mt-3 bg-orange-600 hover:bg-orange-500 px-6 py-2 rounded-lg font-medium text-white w-full">
+              🔄 再试一次
+            </button>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+      }
+    }
+
+    function nextNavigationStep(gameKey, gameId, gameData) {
+      gameState[gameKey].currentStep++;
+      renderNavigationGame(gameId, gameKey, gameData);
+    }
+
+    function nextNavigationMission(gameKey, gameId, gameData) {
+      gameState[gameKey].currentMission++;
+      gameState[gameKey].currentStep = 0;
+      renderNavigationGame(gameId, gameKey, gameData);
+    }
+
+    function retryNavigationStep(gameKey, gameId, gameData) {
+      renderNavigationGame(gameId, gameKey, gameData);
+    }
+
+    function resetNavigationGame(gameKey, gameId, gameData) {
+      gameState[gameKey] = {
+        currentMission: 0,
+        currentStep: 0,
+        score: 0,
+        completedMissions: []
+      };
+      renderNavigationGame(gameId, gameKey, gameData);
+    }
+
+    function initializeMatchingGame(chapterNum, sectionIdx, gameData) {
+      const gameId = `game-${chapterNum}-${sectionIdx}`;
+      const gameKey = `matching-${chapterNum}-${sectionIdx}`;
+      
+      if (!gameState[gameKey]) {
+        // Shuffle and create cards
+        const malayCards = gameData.pairs.map(p => ({ id: `m-${p.id}`, text: p.malay, pairId: p.id, type: 'malay' }));
+        const chineseCards = gameData.pairs.map(p => ({ id: `c-${p.id}`, text: p.chinese, pairId: p.id, type: 'chinese' }));
+        
+        gameState[gameKey] = {
+          malayCards: shuffleArray([...malayCards]),
+          chineseCards: shuffleArray([...chineseCards]),
+          selected: null,
+          matched: new Set(),
+          attempts: 0
+        };
+      }
+      
+      renderMatchingGame(gameId, gameKey, gameData);
+    }
+
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function renderMatchingGame(gameId, gameKey, gameData) {
+      const state = gameState[gameKey];
+      const container = document.getElementById(gameId);
+      
+      if (state.matched.size === gameData.pairs.length) {
+        // Game completed
+        container.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">🎉</div>
+            <h4 class="text-2xl font-bold mb-2">太棒了！</h4>
+            <p class="text-purple-300 mb-4">你成功配对了所有${gameData.pairs.length}组词汇！</p>
+            <p class="text-yellow-400 text-xl font-bold mb-6">总尝试次数: ${state.attempts}</p>
+            <button onclick="resetMatchingGame('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium text-emerald-900">
+              🔄 再玩一次
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
+      container.innerHTML = `
+        <div class="mb-4 flex justify-between items-center">
+          <span class="text-purple-300">点击卡片进行配对</span>
+          <span class="text-yellow-400 font-bold">✅ ${state.matched.size} / ${gameData.pairs.length} 已配对</span>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Malay column -->
+          <div class="space-y-2">
+            <p class="text-center text-purple-300 font-medium mb-2">马来语</p>
+            ${state.malayCards.map(card => {
+              const isMatched = state.matched.has(card.pairId);
+              const isSelected = state.selected?.id === card.id;
+              return `
+                <button 
+                  onclick="selectMatchCard('${gameKey}', '${gameId}', ${JSON.stringify(card).replace(/"/g, '&quot;')}, ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                  class="w-full p-4 rounded-xl font-medium malay-text transition-all ${
+                    isMatched 
+                      ? 'bg-green-600 text-white cursor-default opacity-50' 
+                      : isSelected 
+                        ? 'bg-purple-500 text-white ring-4 ring-yellow-400' 
+                        : 'bg-purple-800/50 hover:bg-purple-700/50 text-white'
+                  }"
+                  ${isMatched ? 'disabled' : ''}>
+                  ${card.text}
+                </button>
+              `;
+            }).join('')}
+          </div>
+          
+          <!-- Chinese column -->
+          <div class="space-y-2">
+            <p class="text-center text-purple-300 font-medium mb-2">中文</p>
+            ${state.chineseCards.map(card => {
+              const isMatched = state.matched.has(card.pairId);
+              const isSelected = state.selected?.id === card.id;
+              return `
+                <button 
+                  onclick="selectMatchCard('${gameKey}', '${gameId}', ${JSON.stringify(card).replace(/"/g, '&quot;')}, ${JSON.stringify(gameData).replace(/"/g, '&quot;')})"
+                  class="w-full p-4 rounded-xl font-medium transition-all ${
+                    isMatched 
+                      ? 'bg-green-600 text-white cursor-default opacity-50' 
+                      : isSelected 
+                        ? 'bg-orange-500 text-white ring-4 ring-yellow-400' 
+                        : 'bg-orange-800/50 hover:bg-orange-700/50 text-white'
+                  }"
+                  ${isMatched ? 'disabled' : ''}>
+                  ${card.text}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+        
+        <div id="match-feedback-${gameKey}" class="mt-4 hidden"></div>
+      `;
+    }
+
+    function selectMatchCard(gameKey, gameId, card, gameData) {
+      const state = gameState[gameKey];
+      const feedbackDiv = document.getElementById(`match-feedback-${gameKey}`);
+      
+      // If no card selected yet, select this one
+      if (!state.selected) {
+        state.selected = card;
+        renderMatchingGame(gameId, gameKey, gameData);
+        return;
+      }
+      
+      // If same card clicked, deselect
+      if (state.selected.id === card.id) {
+        state.selected = null;
+        renderMatchingGame(gameId, gameKey, gameData);
+        return;
+      }
+      
+      // If both cards are same type, deselect and select new
+      if (state.selected.type === card.type) {
+        state.selected = card;
+        renderMatchingGame(gameId, gameKey, gameData);
+        return;
+      }
+      
+      // Check if it's a match
+      state.attempts++;
+      
+      if (state.selected.pairId === card.pairId) {
+        // Match found!
+        state.matched.add(card.pairId);
+        state.selected = null;
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-green-900/30 border border-green-700/50 rounded-xl p-3 text-center">
+            <p class="text-green-300 font-bold">✅ 配对成功！</p>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+        
+        setTimeout(() => {
+          feedbackDiv.classList.add('hidden');
+          renderMatchingGame(gameId, gameKey, gameData);
+        }, 1000);
+      } else {
+        // No match
+        const firstCard = state.selected;
+        state.selected = null;
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-red-900/30 border border-red-700/50 rounded-xl p-3 text-center">
+            <p class="text-red-300 font-bold">❌ 不匹配，再试一次</p>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+        
+        setTimeout(() => {
+          feedbackDiv.classList.add('hidden');
+          renderMatchingGame(gameId, gameKey, gameData);
+        }, 1000);
+      }
+    }
+
+    function resetMatchingGame(gameKey, gameId, gameData) {
+      const malayCards = gameData.pairs.map(p => ({ id: `m-${p.id}`, text: p.malay, pairId: p.id, type: 'malay' }));
+      const chineseCards = gameData.pairs.map(p => ({ id: `c-${p.id}`, text: p.chinese, pairId: p.id, type: 'chinese' }));
+      
+      gameState[gameKey] = {
+        malayCards: shuffleArray([...malayCards]),
+        chineseCards: shuffleArray([...chineseCards]),
+        selected: null,
+        matched: new Set(),
+        attempts: 0
+      };
+      
+      renderMatchingGame(gameId, gameKey, gameData);
+    }
+
+    function initializeGame(chapterNum, sectionIdx, gameData) {
+      const gameId = `game-${chapterNum}-${sectionIdx}`;
+      const gameKey = `${chapterNum}-${sectionIdx}`;
+      
+      if (!gameState[gameKey]) {
+        gameState[gameKey] = {
+          currentScenario: 0,
+          score: 0,
+          completed: []
+        };
+      }
+      
+      renderGameScenario(gameId, gameKey, gameData);
+    }
+
+    function renderGameScenario(gameId, gameKey, gameData) {
+      const state = gameState[gameKey];
+      const container = document.getElementById(gameId);
+      
+      if (state.currentScenario >= gameData.scenarios.length) {
+        // Game completed
+        container.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">🎉</div>
+            <h4 class="text-2xl font-bold mb-2">恭喜完成！</h4>
+            <p class="text-emerald-300 mb-4">你成功完成了所有机场情景！</p>
+            <p class="text-yellow-400 text-xl font-bold mb-6">得分: ${state.score} / ${gameData.scenarios.length}</p>
+            <button onclick="resetGame('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 px-6 py-3 rounded-xl font-medium text-emerald-900">
+              🔄 再玩一次
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
+      const scenario = gameData.scenarios[state.currentScenario];
+      
+      container.innerHTML = `
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-blue-300">情景 ${state.currentScenario + 1} / ${gameData.scenarios.length}</span>
+            <span class="text-yellow-400 font-bold">✨ ${state.score} 分</span>
+          </div>
+          <div class="bg-blue-900/50 rounded-xl p-4 mb-4 border border-blue-700/30">
+            <p class="text-white text-lg mb-2">📍 ${scenario.situation}</p>
+            <p class="text-blue-300 font-medium">${scenario.question}</p>
+          </div>
+        </div>
+        
+        <div class="space-y-3" id="${gameId}-options">
+          ${scenario.options.map((opt, idx) => `
+            <button onclick="selectGameOption('${gameKey}', '${gameId}', ${idx}, ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="game-option w-full text-left p-4 rounded-xl bg-blue-900/50 hover:bg-blue-800/50 transition-all border border-blue-700/30 text-white font-medium malay-text">
+              ${opt.text}
+            </button>
+          `).join('')}
+        </div>
+        
+        <div id="${gameId}-feedback" class="mt-4 hidden"></div>
+      `;
+    }
+
+    function selectGameOption(gameKey, gameId, optionIdx, gameData) {
+      const state = gameState[gameKey];
+      const scenario = gameData.scenarios[state.currentScenario];
+      const selectedOption = scenario.options[optionIdx];
+      const feedbackDiv = document.getElementById(`${gameId}-feedback`);
+      const optionsDiv = document.getElementById(`${gameId}-options`);
+      
+      // Disable all options
+      const buttons = optionsDiv.querySelectorAll('button');
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (selectedOption.isCorrect) {
+        state.score++;
+        buttons[optionIdx].classList.add('bg-green-600', 'border-green-400');
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-green-900/30 border border-green-700/50 rounded-xl p-4">
+            <p class="text-green-300 font-bold mb-2">${scenario.correctFeedback}</p>
+            <button onclick="nextScenario('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="mt-3 bg-green-600 hover:bg-green-500 px-6 py-2 rounded-lg font-medium text-white">
+              继续 →
+            </button>
+          </div>
+        `;
+      } else {
+        buttons[optionIdx].classList.add('bg-red-600', 'border-red-400');
+        
+        feedbackDiv.innerHTML = `
+          <div class="bg-red-900/30 border border-red-700/50 rounded-xl p-4">
+            <p class="text-red-300 font-bold mb-2">${scenario.wrongFeedback}</p>
+            <button onclick="retryScenario('${gameKey}', '${gameId}', ${JSON.stringify(gameData).replace(/"/g, '&quot;')})" 
+              class="mt-3 bg-orange-600 hover:bg-orange-500 px-6 py-2 rounded-lg font-medium text-white">
+              🔄 再试一次
+            </button>
+          </div>
+        `;
+      }
+      
+      feedbackDiv.classList.remove('hidden');
+    }
+
+    function nextScenario(gameKey, gameId, gameData) {
+      gameState[gameKey].currentScenario++;
+      renderGameScenario(gameId, gameKey, gameData);
+    }
+
+    function retryScenario(gameKey, gameId, gameData) {
+      renderGameScenario(gameId, gameKey, gameData);
+    }
+
+    function resetGame(gameKey, gameId, gameData) {
+      gameState[gameKey] = {
+        currentScenario: 0,
+        score: 0,
+        completed: []
+      };
+      renderGameScenario(gameId, gameKey, gameData);
+    }
+
+    function markLearned(chapterNum, sectionIdx, itemIdx, element) {
+      element.classList.add('ring-2', 'ring-yellow-400/50');
+      
+      // Update progress
+      const chapter = chapters[chapterNum];
+      const totalItems = chapter.sections.reduce((sum, s) => sum + s.content.length, 0);
+      progress.chapters[chapterNum] = Math.min(100, progress.chapters[chapterNum] + Math.ceil(100 / totalItems));
+      progress.wordsLearned++;
+      saveProgress();
+    }
+
+    // Exercise answer checking
+    const exerciseScores = {};
+    
+    function checkAnswer(chapterNum, sectionIdx, itemIdx, selectedAnswer, button) {
+      const chapter = chapters[chapterNum];
+      const section = chapter.sections[sectionIdx];
+      const item = section.content[itemIdx];
+      const feedbackDiv = document.getElementById(`feedback-${chapterNum}-${sectionIdx}-${itemIdx}`);
+      const exerciseDiv = document.getElementById(`exercise-${chapterNum}-${sectionIdx}-${itemIdx}`);
+      const scoreKey = `${chapterNum}-${sectionIdx}`;
+      
+      // Initialize score if not exists
+      if (!exerciseScores[scoreKey]) {
+        exerciseScores[scoreKey] = 0;
+      }
+      
+      // Disable all buttons in this question
+      const allButtons = exerciseDiv.querySelectorAll('button');
+      allButtons.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.remove('hover:bg-emerald-700/50');
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+      });
+      
+      // Check if answer is correct
+      const isCorrect = selectedAnswer === item.correct;
+      
+      if (isCorrect) {
+        button.classList.add('bg-green-600', 'border-green-400');
+        feedbackDiv.innerHTML = `
+          <div class="flex items-start gap-2 text-green-300">
+            <span class="text-xl">✅</span>
+            <div>
+              <p class="font-bold mb-1">正确！</p>
+              <p class="text-sm">${item.explanation}</p>
+            </div>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+        feedbackDiv.classList.add('bg-green-900/30', 'border', 'border-green-700/50');
+        
+        // Update score
+        exerciseScores[scoreKey]++;
+        document.getElementById(`score-${chapterNum}-${sectionIdx}`).textContent = exerciseScores[scoreKey];
+        
+        // Update progress
+        progress.wordsLearned++;
+        progress.sentencesLearned++;
+        saveProgress();
+      } else {
+        button.classList.add('bg-red-600', 'border-red-400');
+        
+        // Highlight correct answer
+        allButtons.forEach(btn => {
+          const btnAnswer = btn.textContent.trim().charAt(0);
+          if (btnAnswer === item.correct) {
+            btn.classList.add('bg-green-600', 'border-green-400');
+          }
+        });
+        
+        feedbackDiv.innerHTML = `
+          <div class="flex items-start gap-2 text-red-300">
+            <span class="text-xl">❌</span>
+            <div>
+              <p class="font-bold mb-1">不正确</p>
+              <p class="text-sm">正确答案是 <span class="font-bold text-green-400">${item.correct}</span>. ${item.explanation}</p>
+            </div>
+          </div>
+        `;
+        feedbackDiv.classList.remove('hidden');
+        feedbackDiv.classList.add('bg-red-900/30', 'border', 'border-red-700/50');
+      }
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        try {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'ms-MY';
+          utterance.rate = 0.8;
+          speechSynthesis.speak(utterance);
+        } catch (e) {
+          console.warn('Speech synthesis failed:', e);
+        }
+      }
+    }
+
+    function renderProgressView() {
+      const chaptersContainer = document.getElementById('progress-chapters');
+      const chapterNames = ['马来语简介','自我介绍','机场与交通','酒店','餐厅与美食','购物与讨价还价','方向与位置','紧急情况与健康','文化与礼仪'];
+      const icons = ['📚', '👋', '✈️', '🏨', '🍜', '🛍️', '🗺️', '🚑', '🎭'];
+      
+      chaptersContainer.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => `
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 bg-emerald-700 rounded-lg flex items-center justify-center text-lg">
+            ${icons[num - 1]}
+          </div>
+          <div class="flex-1">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-medium">${chapterNames[num - 1]}</span>
+              <span class="text-emerald-300 text-sm">${progress.chapters[num]}%</span>
+            </div>
+            <div class="h-2 bg-emerald-900 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all" style="width: ${progress.chapters[num]}%"></div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Update overall progress
+      const totalProgress = Object.values(progress.chapters).reduce((a, b) => a + b, 0) / 9;
+      const progressRing = document.getElementById('progress-ring');
+      const circumference = 2 * Math.PI * 70;
+      const offset = circumference - (totalProgress / 100) * circumference;
+      progressRing.style.strokeDashoffset = offset;
+      
+      document.getElementById('progress-percent').textContent = Math.round(totalProgress) + '%';
+      document.getElementById('words-learned').textContent = progress.wordsLearned;
+      document.getElementById('sentences-learned').textContent = Math.floor(progress.wordsLearned / 3);
+    }
+
+    function renderChapter8Mindmap() {
+      return `
+        <div class="space-y-8">
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <span class="inline-block bg-red-600/30 px-4 py-2 rounded-full text-red-300 text-sm mb-4">🏥 第8章 · 思维导图</span>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">紧急情况与健康</h1>
+            <p class="poppins text-xl text-red-200">Kecemasan & Kesihatan</p>
+          </div>
+
+          <!-- Mind Map -->
+          <div class="bg-gradient-to-br from-red-900/50 to-red-800/30 rounded-3xl p-6 md:p-8 border border-red-700/30">
+            
+            <!-- Emergency Numbers -->
+            <div class="bg-red-600/40 rounded-2xl p-5 mb-8 border border-red-500/50">
+              <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                <span class="text-2xl">📞</span> 紧急电话 Nombor Kecemasan
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-red-900/50 rounded-xl p-4 text-center">
+                  <div class="text-3xl font-bold poppins text-red-300">999</div>
+                  <p class="text-sm mt-1">警察/救护车/消防</p>
+                </div>
+                <div class="bg-red-900/50 rounded-xl p-4 text-center">
+                  <div class="text-3xl font-bold poppins text-red-300">991</div>
+                  <p class="text-sm mt-1">消防 Bomba</p>
+                </div>
+                <div class="bg-red-900/50 rounded-xl p-4 text-center">
+                  <div class="text-3xl font-bold poppins text-red-300">994</div>
+                  <p class="text-sm mt-1">民防 Civil Defence</p>
+                </div>
+                <div class="bg-red-900/50 rounded-xl p-4 text-center">
+                  <div class="text-2xl font-bold poppins text-red-300">112</div>
+                  <p class="text-sm mt-1">紧急求助</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Hub -->
+            <div class="flex flex-col items-center">
+              <div class="mindmap-node bg-gradient-to-br from-red-500 to-red-600 rounded-2xl px-8 py-4 text-center shadow-lg mb-8">
+                <div class="text-3xl mb-2">🆘</div>
+                <h2 class="text-xl font-bold">紧急求助</h2>
+                <p class="poppins text-red-200 text-sm">Kecemasan</p>
+              </div>
+
+              <!-- Four Branches -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                
+                <!-- Branch 1: Asking for Help -->
+                <div class="mindmap-node space-y-4" style="animation-delay: 0.1s">
+                  <div class="bg-orange-600/80 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🙋</div>
+                    <h3 class="font-bold">求助</h3>
+                    <p class="poppins text-orange-200 text-sm">Meminta Tolong</p>
+                  </div>
+                  <div class="space-y-2 pl-4 border-l-4 border-orange-500/50">
+                    <div class="bg-orange-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium text-orange-300">Tolong!</p>
+                      <p class="text-sm text-orange-200">救命！</p>
+                    </div>
+                    <div class="bg-orange-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Saya perlukan bantuan.</p>
+                      <p class="text-sm text-orange-200">我需要帮助。</p>
+                    </div>
+                    <div class="bg-orange-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Panggil polis!</p>
+                      <p class="text-sm text-orange-200">叫警察！</p>
+                    </div>
+                    <div class="bg-orange-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Ada kecemasan!</p>
+                      <p class="text-sm text-orange-200">有紧急情况！</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Branch 2: Lost Items -->
+                <div class="mindmap-node space-y-4" style="animation-delay: 0.2s">
+                  <div class="bg-amber-600/80 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">📱</div>
+                    <h3 class="font-bold">失物报告</h3>
+                    <p class="poppins text-amber-200 text-sm">Melaporkan Kehilangan</p>
+                  </div>
+                  <div class="space-y-2 pl-4 border-l-4 border-amber-500/50">
+                    <div class="bg-amber-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Saya kehilangan...</p>
+                      <p class="text-sm text-amber-200">我丢失了...</p>
+                    </div>
+                    <div class="bg-amber-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">pasport 护照</p>
+                    </div>
+                    <div class="bg-amber-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">dompet 钱包</p>
+                    </div>
+                    <div class="bg-amber-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">telefon bimbit 手机</p>
+                    </div>
+                    <div class="bg-amber-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Di mana balai polis?</p>
+                      <p class="text-sm text-amber-200">警察局在哪里？</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Branch 3: Hospital/Clinic -->
+                <div class="mindmap-node space-y-4" style="animation-delay: 0.3s">
+                  <div class="bg-emerald-600/80 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🏥</div>
+                    <h3 class="font-bold">医院/诊所</h3>
+                    <p class="poppins text-emerald-200 text-sm">Hospital/Klinik</p>
+                  </div>
+                  <div class="space-y-2 pl-4 border-l-4 border-emerald-500/50">
+                    <div class="bg-emerald-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Saya sakit.</p>
+                      <p class="text-sm text-emerald-200">我生病了。</p>
+                    </div>
+                    <div class="bg-emerald-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Di mana hospital?</p>
+                      <p class="text-sm text-emerald-200">医院在哪里？</p>
+                    </div>
+                    <div class="bg-emerald-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Saya perlukan doktor.</p>
+                      <p class="text-sm text-emerald-200">我需要医生。</p>
+                    </div>
+                    <div class="bg-emerald-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Ia sangat sakit di sini.</p>
+                      <p class="text-sm text-emerald-200">这里很痛。</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Branch 4: Pharmacy -->
+                <div class="mindmap-node space-y-4" style="animation-delay: 0.4s">
+                  <div class="bg-cyan-600/80 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">💊</div>
+                    <h3 class="font-bold">药房</h3>
+                    <p class="poppins text-cyan-200 text-sm">Farmasi</p>
+                  </div>
+                  <div class="space-y-2 pl-4 border-l-4 border-cyan-500/50">
+                    <div class="bg-cyan-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Di mana farmasi?</p>
+                      <p class="text-sm text-cyan-200">药房在哪里？</p>
+                    </div>
+                    <div class="bg-cyan-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">Saya perlukan ubat...</p>
+                      <p class="text-sm text-cyan-200">我需要...药</p>
+                    </div>
+                    <div class="bg-cyan-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">demam 发烧 | batuk 咳嗽</p>
+                    </div>
+                    <div class="bg-cyan-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">sakit kepala 头痛</p>
+                    </div>
+                    <div class="bg-cyan-800/40 rounded-lg p-3">
+                      <p class="poppins text-sm font-medium">cirit-birit 腹泻</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Symptoms Reference -->
+              <div class="w-full mt-8 bg-red-800/30 rounded-2xl p-5 border border-red-600/30">
+                <h3 class="font-bold mb-4 flex items-center gap-2">
+                  <span class="text-xl">🤒</span> 常见症状 Simptom Biasa
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div class="bg-red-900/50 rounded-lg p-3 text-center">
+                    <span class="text-2xl">🤕</span>
+                    <p class="poppins text-sm font-medium mt-1">Sakit kepala</p>
+                    <p class="text-xs text-red-300">头痛</p>
+                  </div>
+                  <div class="bg-red-900/50 rounded-lg p-3 text-center">
+                    <span class="text-2xl">🤧</span>
+                    <p class="poppins text-sm font-medium mt-1">Selsema</p>
+                    <p class="text-xs text-red-300">感冒</p>
+                  </div>
+                  <div class="bg-red-900/50 rounded-lg p-3 text-center">
+                    <span class="text-2xl">🤮</span>
+                    <p class="poppins text-sm font-medium mt-1">Muntah</p>
+                    <p class="text-xs text-red-300">呕吐</p>
+                  </div>
+                  <div class="bg-red-900/50 rounded-lg p-3 text-center">
+                    <span class="text-2xl">😰</span>
+                    <p class="poppins text-sm font-medium mt-1">Alahan</p>
+                    <p class="text-xs text-red-300">过敏</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between items-center pt-6">
+            <button onclick="showChapter(7)" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition">
+              ← 上一章
+            </button>
+            <button onclick="showChapter(9)" class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition">
+              下一章：文化礼仪 →
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderChapter9() {
+      return `
+        <div class="space-y-8">
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <span class="inline-block bg-indigo-600/30 px-4 py-2 rounded-full text-indigo-300 text-sm mb-4">🎭 第9章 · 文化指南</span>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">马来西亚文化与交际礼仪</h1>
+            <p class="poppins text-xl text-indigo-200">Budaya & Etika Komunikasi Malaysia</p>
+          </div>
+
+          <!-- Content -->
+          <div class="bg-gradient-to-br from-indigo-900/50 to-indigo-800/30 rounded-3xl p-6 md:p-8 border border-indigo-700/30">
+            
+            <!-- Section 1: Taboos -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-rose-600 rounded-xl flex items-center justify-center text-2xl">⚠️</div>
+                <div>
+                  <h2 class="text-xl font-bold">禁忌事项 Pantang Larang</h2>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-rose-800/40 rounded-xl p-5 border border-rose-600/30">
+                  <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">🤚</span>
+                      <div>
+                        <p class="font-medium">不要用左手递东西</p>
+                        <p class="text-sm text-rose-200">左手被认为不洁，用右手或双手</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">🦶</span>
+                      <div>
+                        <p class="font-medium">不要用脚指向人或物</p>
+                        <p class="text-sm text-rose-200">脚被认为是身体最低部位</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">👆</span>
+                      <div>
+                        <p class="font-medium">不要用食指指人</p>
+                        <p class="text-sm text-rose-200">用拇指指向更礼貌</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-rose-800/40 rounded-xl p-5 border border-rose-600/30">
+                  <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">👤</span>
+                      <div>
+                        <p class="font-medium">不要触摸他人头部</p>
+                        <p class="text-sm text-rose-200">头部被认为是神圣的</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">🕌</span>
+                      <div>
+                        <p class="font-medium">进入宗教场所要脱鞋</p>
+                        <p class="text-sm text-rose-200">清真寺、寺庙、印度庙</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">🍖</span>
+                      <div>
+                        <p class="font-medium">尊重饮食习惯</p>
+                        <p class="text-sm text-rose-200">穆斯林不吃猪肉，印度教徒不吃牛肉</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: Dining Etiquette -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center text-2xl">🍽️</div>
+                <div>
+                  <h2 class="text-xl font-bold">餐桌礼仪 Adab Makan</h2>
+                </div>
+              </div>
+              <div class="bg-amber-800/30 rounded-2xl p-6 border border-amber-600/30">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div class="bg-amber-900/50 rounded-xl p-4 text-center">
+                    <span class="text-3xl mb-3 block">🤲</span>
+                    <h4 class="font-semibold mb-2">用手进食</h4>
+                    <p class="text-sm text-amber-200">马来传统用右手抓饭吃，但餐具也普遍</p>
+                  </div>
+                  <div class="bg-amber-900/50 rounded-xl p-4 text-center">
+                    <span class="text-3xl mb-3 block">🥢</span>
+                    <h4 class="font-semibold mb-2">筷子礼仪</h4>
+                    <p class="text-sm text-amber-200">华人餐厅用筷子，不要将筷子插在饭里</p>
+                  </div>
+                  <div class="bg-amber-900/50 rounded-xl p-4 text-center">
+                    <span class="text-3xl mb-3 block">🍵</span>
+                    <h4 class="font-semibold mb-2">共享文化</h4>
+                    <p class="text-sm text-amber-200">马来西亚人喜欢分享食物，这是友好的表现</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Dress Code -->
+            <div class="mb-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center text-2xl">👔</div>
+                <div>
+                  <h2 class="text-xl font-bold">着装建议 Cara Berpakaian</h2>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-violet-800/40 rounded-xl p-5 border border-violet-600/30">
+                  <h4 class="font-semibold mb-3 flex items-center gap-2">
+                    <span>✅</span> 推荐穿着
+                  </h4>
+                  <div class="space-y-2">
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 轻便、透气的衣物（热带气候）</p>
+                    </div>
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 参观宗教场所时穿长裤/长裙</p>
+                    </div>
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 女性可带围巾遮盖肩膀</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-violet-800/40 rounded-xl p-5 border border-violet-600/30">
+                  <h4 class="font-semibold mb-3 flex items-center gap-2">
+                    <span>❌</span> 避免穿着
+                  </h4>
+                  <div class="space-y-2">
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 宗教场所禁止短裤/短裙</p>
+                    </div>
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 政府机构避免太暴露的服装</p>
+                    </div>
+                    <div class="bg-violet-900/50 rounded-lg p-3 text-sm">
+                      <p>• 正式场合避免拖鞋</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4: Multicultural Society -->
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center text-2xl">🌏</div>
+                <div>
+                  <h2 class="text-xl font-bold">多元文化社会 Masyarakat Majmuk</h2>
+                </div>
+              </div>
+              <div class="bg-emerald-800/30 rounded-2xl p-6 border border-emerald-600/30">
+                <p class="text-emerald-200 mb-6">马来西亚是一个多元种族、多元宗教的国家，主要由三大民族组成：</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div class="bg-emerald-900/50 rounded-xl p-5 text-center">
+                    <span class="text-4xl mb-3 block">🕌</span>
+                    <h4 class="font-bold text-lg mb-2">马来人 Melayu</h4>
+                    <p class="text-sm text-emerald-200 mb-2">约60%人口</p>
+                    <p class="text-xs text-emerald-300">信仰伊斯兰教，主要节日：开斋节 Hari Raya</p>
+                  </div>
+                  <div class="bg-emerald-900/50 rounded-xl p-5 text-center">
+                    <span class="text-4xl mb-3 block">🏮</span>
+                    <h4 class="font-bold text-lg mb-2">华人 Cina</h4>
+                    <p class="text-sm text-emerald-200 mb-2">约23%人口</p>
+                    <p class="text-xs text-emerald-300">佛教/道教/基督教，主要节日：农历新年</p>
+                  </div>
+                  <div class="bg-emerald-900/50 rounded-xl p-5 text-center">
+                    <span class="text-4xl mb-3 block">🪷</span>
+                    <h4 class="font-bold text-lg mb-2">印度人 India</h4>
+                    <p class="text-sm text-emerald-200 mb-2">约7%人口</p>
+                    <p class="text-xs text-emerald-300">印度教，主要节日：屠妖节 Deepavali</p>
+                  </div>
+                </div>
+                <div class="mt-6 bg-emerald-900/50 rounded-xl p-4 border border-emerald-500/30">
+                  <h4 class="font-semibold mb-2 flex items-center gap-2">
+                    <span>💡</span> 友好贴士
+                  </h4>
+                  <p class="text-sm text-emerald-200">尊重每个民族的文化和宗教习俗。马来西亚人普遍友好热情，一句"Terima kasih"（谢谢）会让他们很开心！</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Greetings -->
+            <div class="mt-8 bg-indigo-800/30 rounded-2xl p-5 border border-indigo-600/30">
+              <h3 class="font-bold mb-4 flex items-center gap-2">
+                <span class="text-xl">👋</span> 问候方式 Cara Memberi Salam
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-indigo-900/50 rounded-lg p-4">
+                  <h4 class="font-semibold mb-2">马来人问候</h4>
+                  <p class="poppins text-indigo-300">Assalamualaikum</p>
+                  <p class="text-sm text-indigo-200">愿和平与你同在</p>
+                  <p class="text-xs mt-2 text-indigo-300">回复：Waalaikumsalam</p>
+                </div>
+                <div class="bg-indigo-900/50 rounded-lg p-4">
+                  <h4 class="font-semibold mb-2">握手礼仪</h4>
+                  <p class="text-sm text-indigo-200">与马来人握手后，将手放在胸口表示真诚</p>
+                  <p class="text-xs mt-2 text-indigo-300">注意：异性间可能避免握手</p>
+                </div>
+                <div class="bg-indigo-900/50 rounded-lg p-4">
+                  <h4 class="font-semibold mb-2">通用问候</h4>
+                  <p class="poppins text-indigo-300">Selamat!</p>
+                  <p class="text-sm text-indigo-200">你好！/ 祝福！</p>
+                  <p class="text-xs mt-2 text-indigo-300">适用于所有民族</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="flex justify-between items-center pt-6">
+            <button onclick="showChapter(8)" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition">
+              ← 上一章
+            </button>
+            <button onclick="showHome()" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-lg transition">
+              🏠 返回首页
+            </button>
+          </div>
+
+          <!-- Completion Message -->
+          <div class="text-center py-8">
+            <div class="inline-block bg-gradient-to-r from-emerald-600/30 to-teal-600/30 rounded-2xl px-8 py-6 border border-emerald-500/30">
+              <div class="text-4xl mb-4">🎉</div>
+              <h3 class="text-2xl font-bold mb-2">恭喜完成学习！</h3>
+              <p class="poppins text-emerald-300 mb-2">Tahniah! Anda telah selesai!</p>
+              <p class="text-emerald-200">祝您在马来西亚旅途愉快！Selamat melancong!</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("Page loaded successfully");
+      showHome(); // Start with home view
+    });
+
+    // Make functions available globally
+    window.showHome = showHome;
+    window.showProgress = showProgress;
+    window.showChapter = showChapter;
+    window.markLearned = markLearned;
+    window.checkAnswer = checkAnswer;
+    window.speak = speak;
+    window.selectBoutiqueOption = selectBoutiqueOption;
+    window.retryBoutiqueItem = retryBoutiqueItem;
+    window.resetBoutiqueGame = resetBoutiqueGame;
+    window.selectNavigationOption = selectNavigationOption;
+    window.nextNavigationStep = nextNavigationStep;
+    window.nextNavigationMission = nextNavigationMission;
+    window.retryNavigationStep = retryNavigationStep;
+    window.resetNavigationGame = resetNavigationGame;
+    window.selectMatchCard = selectMatchCard;
+    window.resetMatchingGame = resetMatchingGame;
+    window.selectGameOption = selectGameOption;
+    window.nextScenario = nextScenario;
+    window.retryScenario = retryScenario;
+    window.resetGame = resetGame;
+  </script>
+</body>
+</html>
